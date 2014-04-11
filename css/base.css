@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+html{color:#444;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+/* 在基础样式中 body 尽量不控制背景颜色等属性 */
+body{word-wrap:break-word;word-break:break-all;line-height:1.334;-webkit-font-smoothing:antialiased;/*mac 下字体抗锯齿*/}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
+
+/* 表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea{font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:1.5;}
+input,select,button,textarea{font-size:100%;outline:0 none;}
+
+/* 安卓输入框会有外围文字的 bug */
+input,textarea{-webkit-user-modify:read-write-plaintext-only;}
+
+
+textarea{resize:none;}
+
+/* 去掉各Table  cell 的边距并让其边重合 */
+table{border-collapse:collapse;border-spacing:0;}
+
+/* 去除默认边框 */
+iframe,fieldset,img{border:0 none;}
+
+/* IE图片缩小失真，有锯齿的 bug */
+img{-ms-interpolation-mode:bicubic;}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{display:block;}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym{border:0 none;font-variant:normal;}
+
+/* 一致的 del 样式 */
+del{text-decoration:line-through;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500;}
+
+/* 去掉列表前的标识, li 会继承 */
+ol,ul{list-style:none;}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';}
+
+/* 统一上标和下标 */
+sub, sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a{text-decoration:none;}
+
+/* 全局链接样式 */
+a{color:#2b84d0;outline:0 none;cursor:pointer;}
+a *{cursor:pointer;}
+a:hover{text-decoration:underline;color:#d19911;}
+
+/* 浮动与清理浮动 */
+.fl,.fr{display:inline;}
+.fl{float:left;}
+.fr{float:right;}
+.clear{zoom:1;}
+.clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+
+/* 显示样式 */
+.bshow{display:block;}
+.lshow{display:list-item;}
+.ishow{display:inline-block;*display:inline;*zoom:1;}
+.invisible{visibility:hidden;}
+.hide{display:none;}
+
+/* 元素垂直居中对齐 */
+.dis_ibvt{display:inline-block;*display:inline;*zoom:1;vertical-align:top;}
+.dis_ibvm,.vam{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;}
+.vam{width:0;height: 100%;overflow: hidden;}
+
+/* 不受浮动影响的弹性布局 */
+.fluid{display:table-cell;width:2000px;*display:block;*width:auto;*overflow:hidden;*zoom:1;}
+
+/* 雅黑字体 */
+.f_yh{font-family:'Microsoft YaHei',Arial, Helvetica, sans-serif;}
+
+/* 字体颜色 */
+.error{color:#ee0000;}
+.pass{color:#39b130;}
+.gray{color:#666;}
+.orange{color:#f60;}
+.str{color:#ea0000;font-weight:bold;}
+
+/* 单行文字溢出省略号 */
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+
+/* 主体居中布局 */
+.gpage{width:960px;margin:0 auto;}
+
+/* 头中尾定位，导航必定在上 */
+.relative{position:relative;}
+#topwrap{z-index:2;}
+#middle{z-index:1;}
+#footer{z-index:0;}
+
+/* 编辑器有可能有定位因此需独立定义层级 */
+
+/* 弹框层级应高 */
+.mask{position:absolute;z-index:9999;}
+.dialog{z-index:10000;}
+
+
+
+
+
+/*阴影实例*/
+.shadow20140411{box-shadow:1px 3px 5px #666;}
+/*半透明及渐变*/
+.halfalpha20140411{background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);
+}
+/*渐变*/
+.gradient20140411{
+background-image:-ms-linear-gradient(top left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:-moz-linear-gradient(top left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:-o-linear-gradient(top left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image:-webkit-gradient(linear, left top, right bottom, color-stop(0, #ffffff), color-stop(.9, #ffffff), color-stop(1, #00a3ef));/*for safari*/
+background-image:-webkit-linear-gradient(top left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+background-image: linear-gradient(to bottom right, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff00a3ef', GradientType=1);/*1水平渐变，0垂直，defalut 0*/}
+/* hack实例 */
+.hack20140411{color:#f00\0;/*for IE6-11*/
+color:#f0f\9;/*for IE6-10*/
+color:#ff0\0/;/*for IE8*/
+*color:#0ff;/*for IE6-7*/
+_color:#00f;/*for IE6*/}
+
+/* 多背景多类处理 */
+.chapters ul li a[class*=odd]{background-position:left bottom;}
+.chapters ul li a.intime{background-position-x:-74px;color:#444;}
+.chapters ul li a[class*=intime]{background-position:-74px top;}
+.chapters ul li a[class*=odd][class*=intime]{background-position:-74px bottom;}
+.chapters ul li a{display:block;width:60px;height:60px;padding:7px 7px 17px;overflow:hidden;background-image:url(../images/chapter_bg.gif);background-repeat:no-repeat;margin-bottom:30px;background-position:left top;background-position-x:left;word-break:break-all;}
+.chapters ul li a.on{background-position-x:-148px;color:#444;}
+.chapters ul li a[class*=on]{background-position:right top;}
+.chapters ul li a[class*=odd][class*=on]{background-position:-148px bottom;}
+.chapters ul li a.odd{float:right;padding:17px 7px 7px;background-position-y:bottom;}
+.chapters ul li a:hover{text-decoration:none;}
+
+
+
+
