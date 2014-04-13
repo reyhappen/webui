@@ -2,7 +2,7 @@
 
 html{color:#444;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;_background-image:url(about:blank);_background-attachment:fixed;_text-overflow:ellipsis;/*IE6 模拟fixed定位抖动bug*/}
 /* 在基础样式中 body 尽量不控制背景颜色等属性，html,body不能设置高度100%会对iframe自适应产生错误 */
-body{word-wrap:break-word;word-break:break-all;line-height:1.334;-webkit-font-smoothing:antialiased;/*mac 下字体抗锯齿*/}
+body{word-wrap:break-word;word-break:break-all;line-height:1.334;*font-family:SimSun, Arial, Helvetica, sans-serif;/*开发前强制IE字体为宋体尽量不造成在xp环境下由于没有雅黑字体产生行高不一致从而错位*/-webkit-font-smoothing:antialiased;/*mac 下字体抗锯齿*/}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
 
 /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
@@ -100,21 +100,23 @@ a:hover{text-decoration:underline;color:#d19911;}
 
 /* 头中尾定位，导航必定在上 */
 .relative{position:relative;}
+.fixheader{position:fixed;left:0;top:0;_position:absolute;z-index:3;_top:expression(eval(document.documentElement.scrollTop));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');width:100%;}
+:root .fixheader{background:rgba(62,148,221,.85);filter:none;}
 #topwrap{z-index:2;}
 #middle{z-index:1;}
 #footer{z-index:0;}
 
 /* 弹框层级应高 */
-.popwrap{z-index:10000;position:fixed;_position:absolute;left:0;top:0;z-index:5000;zoom:1;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f000000', endColorstr='#7f000000', GradientType=0 )\9;_height:expression(document.documentElement.clientHeight+'px');_top:50%;_margin-top:expression(document.documentElement.scrollTop-parseInt(document.documentElement.clientHeight/2)+'px');}
+.popwrap{z-index:10000;position:fixed;_position:absolute;left:0;top:0;z-index:5000;zoom:1;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f000000',endColorstr='#7f000000');_height:expression(document.documentElement.clientHeight+'px');_top:50%;_margin-top:expression(document.documentElement.scrollTop-parseInt(document.documentElement.clientHeight/2)+'px');}
 :root .popwrap{background:rgba(0,0,0,.5);filter:none;}
 
 /* 纯 css 居中弹出层样式 */
 .popwrap .mask{display:none;_display:block;/*在IE下右击刷新可能是刷新该iframe*/width:100%;height:100%;opacity:0;filter:alpha(opacity=0);}
 .popup{position:absolute;left:0;top:0;/*绝对定位的元素在IE6下不给left，top时会接在其他元素下面的bug*/width:100%;height:100%;color:#fff;font-size:0;text-align:center;}
 .dialog{width:500px;font-size:12px;text-align:left;background:#fff;}
-.popheader{height:36px;line-height:36px;background:#3e94dd;position:relative;left:0;top:0;padding:0 36px 0 0;}
-.popheader h6{cursor:move;padding:0 10px;}
-.popheader a{position:absolute;right:0;top:0;width:36px;height:36px;overflow:hidden;background:#fff;}
+.popheader{height:36px;line-height:36px;position:relative;left:0;top:0;padding:0 36px 0 0;}
+.popheader h6{cursor:move;padding:0 10px;background:#3e94dd;}
+.popheader a{position:absolute;right:0;top:0;width:36px;height:36px;background:#fff;}
 .popbody{height:200px;overflow-y:auto;}
 .poppadd{padding:10px;}
 .popfooter{padding:10px 0;border-top:1px solid #ccc;background:#f8f8f8;text-align:right;}
