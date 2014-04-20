@@ -5,13 +5,14 @@
 <title>单一功能测试文件</title>
 <link type="text/css" rel="stylesheet" href="css/base.css"/>
 </head>
-<body>
-<div class="fixheader">fixheader</div>
-<select name="" id="">
+<body class="minwidth">
+<!-- iframe禁止右击fixed鼠标在iframe区域右击刷新时不刷新整个页面 -->
+<div class="fixheader"><iframe width="100%" class="hideselect4ie6" align="top" src="javascript:document.oncontextmenu=null" tabindex="-1" frameborder="0" scrolling="no"></iframe>fixheader</div>
+<select style="margin-top:20px;" name="" id="">
 	<option>我是select</option>
 	<option>我是select</option>
 </select>
-<div>
+<div style="position:relative;" class="gradient20140411">
 asdhjkashd<br />
 asdhjkashd<br />
 asdhjkashd<br />
@@ -60,22 +61,35 @@ asdhjkashd<br />
 asdhjkashd<br />
 asdhjkashd<br />
 asdhjkashd<br />
-asdhjkashd<br />
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd
+as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd<br />
 </div>
 
 <!-- 弹出层结构 -->
 <div class="popwrap">
-	<iframe class="mask" align="top" src="about:blank" frameborder="0"></iframe>
+	<iframe class="hideselect4ie6" align="top" src="javascript:document.oncontextmenu=null" tabindex="-1" frameborder="0" scrolling="no"></iframe>
 	<div class="popup">
 		<dl class="dis_ibvm dialog">
-			<dt class="popheader"><h6>弹出框标题</h6><a title="关闭" href="javascript:;">x</a></dt>
-			<dd class="popbody poppadd clear">内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br /></dd>
-			<dd class="popfooter"><a href="javascript:;">知道了</a></dd>
+			<dt class="popheader"><h6>弹出框标题</h6><span class="close" title="关闭">x</span></dt>
+			<dd class="popbody popmargin clear">内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br />内容区内容区<br /></dd>
+			<dd class="popfooter clear"><a class="fr" href="javascript:;">知道了</a></dd>
 		</dl>
 		<div class="vam"></div>
 	</div>
 </div>
 <!-- 弹出层结构 -->
-<a id="gotop" href="#">到顶部</a>
+<div class="fs0">
+	<div class="resetfs">asdasdasdasd</div>
+</div>
+<a id="gotop" href="#" title="返回顶部">返回顶部</a>
+<script>
+//alert(123)
+</script>
 </body>
 </html>
