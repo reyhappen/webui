@@ -82,6 +82,23 @@ a:hover{text-decoration:underline;color:#d19911;}
 /* 最小页面宽度 */
 .mwidth960{min-width:960px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<960?'960px':'');}
 
+/* 三角箭头 */
+.arrow_up,.arrow_right,.arrow_down,.arrow_left{width:0;height:0;overflow:hidden;padding:0;font-size:0;line-height:0;display:inline-block;*display:inline;*zoom:1;border:0;/**border-color:tomato;*filter:chroma(color=tomato);*/}
+/*箭头颜色与大小在此处写，一定要写在箭头方向之前*/
+.arrow_gray{border-color:#ddd;}
+.arrow_blue{border-color:#1d4993;}
+.arrow_white{border-color:#fff;}
+.arrow7{border-width:7px;}
+.arrow6{border-width:6px;}
+.arrow5{border-width:5px;}
+.arrow4{border-width:4px;}
+/*箭头方向控制，边框风格与边框颜色必须分开写，不然在IE67与其他浏览器相差太大*/
+.arrow_up{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-bottom-style:solid;border-top:0 none;}
+.arrow_right{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-left-style:solid;border-right:0 none;}
+.arrow_down{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-top-style:solid;border-bottom:0 none;}
+.arrow_left{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-right-style:solid;border-left:0 none;}
+
+
 /* 字体尺寸大小（主要用于修复inline，inline-block元素的空白间距） */
 .fs0{font-size:0;}
 body,.resetfs{font-size:12px;}/*重设字体*/
@@ -97,20 +114,19 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 .str{color:#ea0000;font-weight:bold;}
 
 /* 单行文字溢出省略号 */
-.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
 
 /* 主体居中布局 */
-.gpage{width:960px;margin:0 auto;}
+.cpage{width:960px;margin:0 auto;}
 
-/* IE6 隐藏 select 必须样式 */
-.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter:alpha(opacity=0);cursor:default;}
+/* IE6 隐藏 select 必须样式（包含该iframe的元素必须设置定位） */
+iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter:alpha(opacity=0);cursor:default;}
 
 /* 头中尾定位，导航必定在上 */
 .relative{position:relative;}
 /*固定的头部*/
 .fixheader{position:fixed;left:0;top:0;_position:absolute;z-index:3;width:100%;_top:expression(eval(document.documentElement.scrollTop));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');}
 :root .fixheader{background:rgba(62,148,221,.85);filter:none;}
-.fixheader .hideselect4ie6{height:18px;}
 
 #topwrap{z-index:2;}
 #middle{z-index:1;}
@@ -119,7 +135,7 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 
 /*返回顶部*/
 #gotop{position:fixed;right:0;bottom:20px;_position:absolute;z-index:3;width:30px;height:30px;overflow:hidden;text-indent:-100px;border-radius:3px;background-image:url(about:blank);/*修复大部分IE与透明度有关（透明度比如alpha，png，gradient为透明时被穿透）的bug*/background-color:rgba(62,148,221,.85);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-50));}
-:root #gotop{filter:none;}
+:root #gotop{filter:none;-ms-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
 #gotop:hover{background-color:rgba(255,0,0,.55);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#90ff0000',endColorstr='#90ff0000');}
 :root #gotop:hover{filter:none;}
 
@@ -149,7 +165,7 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 .hide{display:none;}
 
 
-
+/*多滤镜之间用空格或者换行隔开*/
 /*伪类实现的简单图标*/
 /*阴影实例*/
 .shadow20140411{box-shadow:1px 3px 5px #666;}
@@ -157,6 +173,7 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 .halfalpha20140411{background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
 /*渐变*/
 .gradient20140411{
+background-image:url(about:blank);
 background-image:-ms-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
 background-image:-moz-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
 background-image:-o-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
@@ -165,12 +182,32 @@ background-image:-webkit-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 
 background-image:linear-gradient(to right, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff00a3ef', GradientType=1);/*1水平渐变，0垂直，defalut 0*/
 *zoom:1;/*渐变元素若未定义宽高需要触发layout*/}
+
 /* hack实例 */
-.hack20140411{color:#f00\0;/*for IE6-11*/
-color:#f0f\9;/*for IE6-10*/
-color:#ff0\0/;/*for IE8*/
-*color:#0ff;/*for IE6-7*/
-_color:#00f;/*for IE6*/}
+.hack20140411{background-color:#000;/*一般浏览器*/
+background-color:#f00\0;/*for IE6-11*/
+background-color:#f0f\9;/*for IE6-10*/
+background-color:#ff0\0/;/*for IE8 仅一些属性如border,background*/
+*background-color:#0ff;/*for IE6-7*/
+_background-color:#00f;/*for IE6*/}
+@media \0screen{/*for IE8*/
+.hack20140411{width:30px;background-color:#ff0;}
+}
+@media screen and (min-width:0){/*forIE9-11，其他内核。预先规划css集中化定义。*/
+.hack20140411{border:1px solid #f00;}
+}
+/*forIE9-11，其他内核*/
+:root .fixheader{background:rgba(62,148,221,.85);filter:none;}
+
+/* 气泡示例 */
+.bubbles{position:relative;left:0;top:0;border:2px solid #09f;padding:30px;_zoom:1;/*IE6必须触发layout*/margin:20px 50px 0;}
+.bubble_border, .bubble_bg{display:block;position:absolute;right:0;top:10px;z-index:1;height:0;width:0;overflow:hidden;font-size:0;line-height:0;border:10px dashed transparent;}
+.bubble1 .bubble_border{right:-20px;border-left-style:solid;border-left-color:#09f;/*正角*/}
+.bubble1 .bubble_bg{right:-17px;border-left-style:solid;border-left-color:#fff;/*正角*/}
+.bubble2 .bubble_border{right:-20px;border-width:0 0 15px;border-left:20px solid #09f;/*斜角*/}
+.bubble2 .bubble_bg{top:12px;right:-17px;border-width:0 3px 27px 36px;border-left:36px solid #fff;/*斜角*/}
+
+
 
 /* 多背景多类处理 */
 .chapters ul li a[class*=odd]{background-position:left bottom;}

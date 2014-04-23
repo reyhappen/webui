@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+.fixheader{height:45px;overflow-y:hidden;}
+.fixheader .hideselect4ie6{height:100%;}
+
+.top{_zoom:1;/*IE6必须触发layout否则其子元素会受padding的影响*/padding-top:45px;}
