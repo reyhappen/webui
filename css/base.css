@@ -59,7 +59,7 @@ sub{bottom:-0.25em;}
 ins,a{text-decoration:none;}
 
 /* 全局链接样式 */
-a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:color 0.3s ease-in-out;-moz-transition:color 0.3s ease-in-out;-o-transition:color 0.3s ease-in-out;-webkit-transition:color 0.3s ease-in-out;transition:color 0.3s ease-in-out;}
+a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:color 0.3s ease-in-out;-moz-transition:color 0.3s ease-in-out;-o-transition:color 0.3s ease-in-out;-webkit-transition:color 0.3s ease-in-out;transition:color 0.3s ease-in-out;/*渐进增强*/}
 /* IE6 链接下的元素不显示手型 */
 a *{cursor:pointer;}
 a:hover{text-decoration:underline;color:#d19911;}
@@ -164,6 +164,9 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 .invisible{visibility:hidden;}
 .hide{display:none;}
 
+/* 不可用状态 */
+.odisabled{filter:alpha(opacity=50);opacity:.5;}
+.disabled{background:#ccc;color:#666;}
 
 /*多滤镜之间用空格或者换行隔开*/
 /*伪类实现的简单图标*/
@@ -171,6 +174,10 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 .shadow20140411{box-shadow:1px 3px 5px #666;}
 /*半透明及渐变*/
 .halfalpha20140411{background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
+/*多滤镜用法*/
+.mulfilters20140425{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20), progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
+/**/
+.supportfilters{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20), progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);}
 /*渐变*/
 .gradient20140411{
 background-image:url(about:blank);
@@ -187,6 +194,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', end
 .hack20140411{background-color:#000;/*一般浏览器*/
 background-color:#f00\0;/*for IE6-11*/
 background-color:#f0f\9;/*for IE6-10*/
+background-color:#60F\9\0;/*for IE9-10 仅一些属性如border,background*/
 background-color:#ff0\0/;/*for IE8 仅一些属性如border,background*/
 *background-color:#0ff;/*for IE6-7*/
 _background-color:#00f;/*for IE6*/}
@@ -200,12 +208,12 @@ _background-color:#00f;/*for IE6*/}
 :root .fixheader{background:rgba(62,148,221,.85);filter:none;}
 
 /* 气泡示例 */
-.bubbles{position:relative;left:0;top:0;border:2px solid #09f;padding:30px;_zoom:1;/*IE6必须触发layout*/margin:20px 50px 0;}
+.bubbles{position:relative;left:0;top:0;border:2px solid #09f;padding:30px;_zoom:1;/*IE6必须触发layout*/margin:0 50px 20px;}
 .bubble_border, .bubble_bg{display:block;position:absolute;right:0;top:10px;z-index:1;height:0;width:0;overflow:hidden;font-size:0;line-height:0;border:10px dashed transparent;}
-.bubble1 .bubble_border{right:-20px;border-left-style:solid;border-left-color:#09f;/*正角*/}
-.bubble1 .bubble_bg{right:-17px;border-left-style:solid;border-left-color:#fff;/*正角*/}
-.bubble2 .bubble_border{right:-20px;border-width:0 0 15px;border-left:20px solid #09f;/*斜角*/}
-.bubble2 .bubble_bg{top:12px;right:-17px;border-width:0 3px 27px 36px;border-left:36px solid #fff;/*斜角*/}
+.bubble1 .bubble_border{right:-20px;_right:-21px;border-left-style:solid;border-left-color:#09f;/*正角*/}
+.bubble1 .bubble_bg{right:-17px;_right:-18px;border-left-style:solid;border-left-color:#fff;/*正角*/}
+.bubble2 .bubble_border{right:-20px;_right:-21px;border-width:0 0 15px;border-left:20px solid #09f;/*斜角*/}
+.bubble2 .bubble_bg{top:12px;right:-17px;_right:-18px;border-width:0 3px 27px 36px;border-left:36px solid #fff;/*斜角*/}
 
 
 
