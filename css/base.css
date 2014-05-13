@@ -79,11 +79,28 @@ a:hover{text-decoration:underline;color:#d19911;}
 /* 不受浮动影响的弹性布局 */
 .fluid{display:table-cell;width:2000em;*display:block;*width:auto;*overflow:hidden;*zoom:1;}
 
-/* 最小页面宽度 */
-.mwidth960{min-width:960px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<960?'960px':'');}
+/*三角箭头双选择器版
+.arrow_gray{border-color:#ddd;}
+.arrow_blue{border-color:#1d4993;}
+.arrow_white{border-color:#fff;}
+.arrowu7, .arrowr7, .arrowd7, .arrowl7,
+.arrowu6, .arrowr6, .arrowd6, .arrowl6,
+.arrowu5, .arrowr5, .arrowd5, .arrowl5,
+.arrowu4, .arrowr4, .arrowd4, .arrowl4{width:0;height:0;overflow:hidden;padding:0;font-size:0;line-height:0;display:inline-block;*display:inline;*zoom:1;border:0;}
 
-/* 三角箭头 */
-.arrow_up,.arrow_right,.arrow_down,.arrow_left{width:0;height:0;overflow:hidden;padding:0;font-size:0;line-height:0;display:inline-block;*display:inline;*zoom:1;border:0;/**border-color:tomato;*filter:chroma(color=tomato);*/}
+.arrowu7, .arrowr7, .arrowd7, .arrowl7{border-width:7px;}
+.arrowu6, .arrowr6, .arrowd6, .arrowl6{border-width:6px;}
+.arrowu5, .arrowr5, .arrowd5, .arrowl5{border-width:6px;}
+.arrowu4, .arrowr4, .arrowd4, .arrowl4{border-width:6px;}
+
+.arrowu7, .arrowu6, .arrowu5, .arrowu4{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-bottom-style:solid;border-top:0 none;}
+.arrowr7, .arrowr6, .arrowr5, .arrowr4{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-left-style:solid;border-right:0 none;}
+.arrowd7, .arrowd6, .arrowd5, .arrowd4{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-top-style:solid;border-bottom:0 none;}
+.arrowl7, .arrowl6, .arrowl5, .arrowl4{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-right-style:solid;border-left:0 none;}
+*/
+
+/*三角箭头三选择器版*/
+.arrow_up,.arrow_right,.arrow_down,.arrow_left{width:0;height:0;overflow:hidden;padding:0;font-size:0;line-height:0;display:inline-block;*display:inline;*zoom:1;border:0;}
 /*箭头颜色与大小在此处写，一定要写在箭头方向之前*/
 .arrow_gray{border-color:#ddd;}
 .arrow_blue{border-color:#1d4993;}
@@ -116,6 +133,8 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 /* 单行文字溢出省略号 */
 .ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
 
+/* 最小页面宽度 */
+.mwidth960{min-width:960px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<960?'960px':'');}
 /* 主体居中布局 */
 .cpage{width:960px;margin:0 auto;}
 
@@ -165,8 +184,7 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 .hide{display:none;}
 
 /* 不可用状态 */
-.odisabled{filter:alpha(opacity=50);opacity:.5;}
-.disabled{background:#ccc;color:#666;}
+.disabled{filter:alpha(opacity=50);opacity:.5;background:#ccc;color:#666;}
 
 /*多滤镜之间用空格或者换行隔开*/
 /*伪类实现的简单图标*/
@@ -175,9 +193,7 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 /*半透明及渐变*/
 .halfalpha20140411{background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
 /*多滤镜用法*/
-.mulfilters20140425{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20), progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
-/**/
-.supportfilters{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20), progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);}
+.mulfilters20140425{filter:progid:DXImageTransform.Microsoft.alpha(opacity=20), progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
 /*渐变*/
 .gradient20140411{
 background-image:url(about:blank);
@@ -194,8 +210,6 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', end
 .hack20140411{background-color:#000;/*一般浏览器*/
 background-color:#f00\0;/*for IE6-11*/
 background-color:#f0f\9;/*for IE6-10*/
-background-color:#60F\9\0;/*for IE9-10 仅一些属性如border,background*/
-background-color:#ff0\0/;/*for IE8 仅一些属性如border,background*/
 *background-color:#0ff;/*for IE6-7*/
 _background-color:#00f;/*for IE6*/}
 @media \0screen{/*for IE8*/
