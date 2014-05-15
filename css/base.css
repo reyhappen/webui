@@ -34,7 +34,7 @@ iframe,fieldset,img{border:0 none;}
 img{-ms-interpolation-mode:bicubic;}
 
 /* ie6 7 8(q) bug 显示为行内表现 */
-iframe{display:block;*zoom:1;}
+iframe{display:block;}
 
 /* 去掉 firefox 下此元素的边框 */
 abbr,acronym{border:0 none;font-variant:normal;}
@@ -184,13 +184,11 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 .hide{display:none;}
 
 /* 不可用状态 */
-.disabled{filter:alpha(opacity=50);opacity:.5;background:#ccc;color:#666;}
+.disabled{filter:alpha(opacity=50);opacity:.5;cursor:not-allowed;}
 
-/*多滤镜之间用空格或者换行隔开*/
-/*伪类实现的简单图标*/
 /*阴影实例*/
 .shadow20140411{box-shadow:1px 3px 5px #666;}
-/*半透明及渐变*/
+/*半透明背景*/
 .halfalpha20140411{background-color:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
 /*多滤镜用法*/
 .mulfilters20140425{filter:progid:DXImageTransform.Microsoft.alpha(opacity=20), progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);}
