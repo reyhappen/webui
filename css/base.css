@@ -1,4 +1,10 @@
 @charset "utf-8";
+/*
+ * 有些不可用类名比如.h为所有要使用:hover伪类的元素提供鼠标经过样式类
+ * 
+ * 
+ * */
+
 
 html{color:#444;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;_background-image:url(about:blank);_background-attachment:fixed;_text-overflow:ellipsis;/*IE6 模拟fixed定位抖动bug*/}
 /* 在基础样式中 body 尽量不控制背景颜色等属性，html,body不能设置高度100%会对iframe自适应产生错误 */
@@ -13,9 +19,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
 
 /* 表单元素并不继承父级 font 的问题 */
-button,input,select,textarea{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%;outline:0 none;}
+button,input,select,textarea{font-family:inherit;font-size:inherit;word-wrap:break-word;word-break:break-all;font-weight:inherit;*font-size:100%;outline:0 none;}
 
-/* 安卓输入框会有外围文字的 bug */
+/* 安卓输入框里会有外围文字的 bug */
 input,textarea{-webkit-user-modify:read-write-plaintext-only;}
 
 /* 禁止拉动修改文本域的大小 */
@@ -24,20 +30,20 @@ textarea{resize:none;}
 /* IE67会比一般的按钮大的 bug */
 button{*overflow:visible;*font-size:90%;}
 
-/* 去掉各Table  cell 的边距并让其边重合 */
+/* 去掉各Table  cell 的边距并让其边框重合 */
 table{border-collapse:collapse;border-spacing:0;}
 
 /* 去除默认边框 */
-iframe,fieldset,img{border:0 none;}
+iframe,fieldset,img{border:0;}
 
-/* IE图片缩小失真，有锯齿的 bug */
-img{-ms-interpolation-mode:bicubic;}
+/* 原型换行 */
+pre{white-space:pre-wrap;}
 
 /* ie6 7 8(q) bug 显示为行内表现 */
 iframe{display:block;}
 
 /* 去掉 firefox 下此元素的边框 */
-abbr,acronym{border:0 none;font-variant:normal;}
+abbr,acronym{border:0;font-variant:normal;}
 
 /* 一致的 del 样式 */
 del{text-decoration:line-through;}
@@ -59,16 +65,13 @@ sub{bottom:-0.25em;}
 ins,a{text-decoration:none;}
 
 /* 全局链接样式 */
-a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:color 0.3s ease-in-out;-moz-transition:color 0.3s ease-in-out;-o-transition:color 0.3s ease-in-out;-webkit-transition:color 0.3s ease-in-out;transition:color 0.3s ease-in-out;/*渐进增强*/}
-/* IE6 链接下的元素不显示手型 */
-a *{cursor:pointer;}
-a:hover{text-decoration:underline;color:#d19911;}
+a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;/*渐进增强*/}
 
 /* 浮动与清理浮动 */
 .fl,.fr{display:inline;}
 .fl{float:left;}
 .fr{float:right;}
-.clear{zoom:1;}
+.clear{*zoom:1;}
 .clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
 
 /* 元素垂直居中对齐 */
@@ -93,10 +96,12 @@ a:hover{text-decoration:underline;color:#d19911;}
 .arrowu5, .arrowr5, .arrowd5, .arrowl5{border-width:6px;}
 .arrowu4, .arrowr4, .arrowd4, .arrowl4{border-width:6px;}
 
-.arrowu7, .arrowu6, .arrowu5, .arrowu4{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-bottom-style:solid;border-top:0 none;}
-.arrowr7, .arrowr6, .arrowr5, .arrowr4{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-left-style:solid;border-right:0 none;}
-.arrowd7, .arrowd6, .arrowd5, .arrowd4{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-top-style:solid;border-bottom:0 none;}
-.arrowl7, .arrowl6, .arrowl5, .arrowl4{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-right-style:solid;border-left:0 none;}
+.arrowu7, .arrowu6, .arrowu5, .arrowu4, .arrowd7, .arrowd6, .arrowd5, .arrowd4{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;}
+.arrowu7, .arrowu6, .arrowu5, .arrowu4{border-bottom-style:solid;border-top:0 none;}
+.arrowr7, .arrowr6, .arrowr5, .arrowr4, .arrowl7, .arrowl6, .arrowl5, .arrowl4{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;}
+.arrowr7, .arrowr6, .arrowr5, .arrowr4{border-left-style:solid;border-right:0 none;}
+.arrowd7, .arrowd6, .arrowd5, .arrowd4{border-top-style:solid;border-bottom:0 none;}
+.arrowl7, .arrowl6, .arrowl5, .arrowl4{border-right-style:solid;border-left:0 none;}
 */
 
 /*三角箭头三选择器版*/
@@ -110,10 +115,12 @@ a:hover{text-decoration:underline;color:#d19911;}
 .arrow5{border-width:5px;}
 .arrow4{border-width:4px;}
 /*箭头方向控制，边框风格与边框颜色必须分开写，不然在IE67与其他浏览器相差太大*/
-.arrow_up{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-bottom-style:solid;border-top:0 none;}
-.arrow_right{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-left-style:solid;border-right:0 none;}
-.arrow_down{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;border-top-style:solid;border-bottom:0 none;}
-.arrow_left{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;border-right-style:solid;border-left:0 none;}
+.arrow_up, .arrow_down{border-right-style:dashed;border-right-color:transparent;border-left-style:dashed;border-left-color:transparent;}
+.arrow_up{border-bottom-style:solid;border-top:0 none;}
+.arrow_right, .arrow_left{border-top-style:dashed;border-top-color:transparent;border-bottom-style:dashed;border-bottom-color:transparent;}
+.arrow_right{border-left-style:solid;border-right:0 none;}
+.arrow_down{border-top-style:solid;border-bottom:0 none;}
+.arrow_left{border-right-style:solid;border-left:0 none;}
 
 
 /* 字体尺寸大小（主要用于修复inline，inline-block元素的空白间距） */
@@ -128,7 +135,6 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 .pass{color:#39b130;}
 .gray{color:#666;}
 .orange{color:#f60;}
-.str{color:#ea0000;font-weight:bold;}
 
 /* 单行文字溢出省略号 */
 .ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
@@ -142,10 +148,38 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter:alpha(opacity=0);cursor:default;}
 
 /* 头中尾定位，导航必定在上 */
-.relative{position:relative;}
+.relative, #topwrap, #middle, #footer{position:relative;left:0;top:0;}
 /*固定的头部*/
-.fixheader{position:fixed;left:0;top:0;_position:absolute;z-index:3;width:100%;_top:expression(eval(document.documentElement.scrollTop));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');}
-:root .fixheader{background:rgba(62,148,221,.85);filter:none;}
+.fixheader{position:fixed;left:0;top:0;_position:absolute;z-index:3;width:100%;box-shadow:0 7px 7px rgba(0,0,0,.1);_top:expression(eval(document.documentElement.scrollTop));}
+.fixheader .hideselect4ie6{height:100%;}
+.ie_gradient_fix{position:absolute;z-index:-1;top:0;left:0;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');/*老外总是能给人惊喜*/}
+:root .ie_gradient_fix{background:rgba(62,148,221,.85);filter:none;}
+.fixheader .ie_gradient_fix{height:40px;}
+.logo{margin-right:10px;}
+.logo a{display:block;text-indent:-100em;background:url(../image/logo.jpg) left center no-repeat;width:100px;}
+.fixheader, .logo a{height:40px;}
+
+.ico{display:inline-block;*display:inline;*zoom:1;width:16px;height:16px;}
+.nav{}
+.nav .nav_item{display:inline-block;*display:inline;*zoom:1;position:relative;left:0;top:0;vertical-align:top;}
+.nav .nav_item .nav_header{font-size:0;}
+.nav .nav_item .nav_header a{display:inline-block;*display:inline;*zoom:1;color:#fff;line-height:40px;padding:0 5px;_padding:12px 5px;font-size:12px;}
+.nav .nav_item .nav_header a.curr{background-color:rgb(95, 178, 243);}
+.nav .nav_item .nav_header a:hover{background:#fff;color:#404040;text-decoration:none;}
+.nav .nav_item .nav_header a .ico{margin-right:5px;background-image:url(../image/sprite.png);}
+.nav .nav_item .nav_header a .ico_icenter{background-position:-690px -150px;}
+.nav .nav_item .nav_header a:hover .ico_icenter{background-position:-740px -75px;}
+.nav .nav_item .nav_header a .ico_homepage{background-position:-715px 0;}
+.nav .nav_item .nav_header a:hover .ico_homepage{background-position:-740px -125px;}
+.nav .nav_item .nav_header a .ico, .nav .nav_item .nav_header a span{vertical-align:middle;}
+.nav .nav_item .nav_header a .arrow_down{margin-left:3px;-webkit-transition:.3s ease-in;-moz-transition:.3s ease-in;-o-transition:.3s ease-in;-ms-transition:.3s ease-in;transition:.3s ease-in;}
+.nav .nav_item .nav_header a:hover .arrow_down{border-bottom:4px solid #ddd;border-top:0 none;}
+:root .nav .nav_item .nav_header a:hover .arrow_down{border-bottom:0 none;border-top:4px solid #ddd;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(0);transform:rotate(180deg);}
+.nav .nav_item .nav_body{display:none;}
+.nav .nav_item:hover .nav_body, .nav li.hover .nav_body{display:block;}/*若导航标签发生改变，此处li标签可能也要相应改变(利用jquery实现hover)*/
+
+
+.top{_zoom:1;/*IE6必须触发layout否则其子元素会受padding的影响*/padding-top:55px;}
 
 #topwrap{z-index:2;}
 #middle{z-index:1;}
@@ -183,6 +217,10 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 .invisible{visibility:hidden;}
 .hide{display:none;}
 
+/* IE6 链接下的元素不显示手型 */
+a *{cursor:pointer;}
+a:hover{text-decoration:underline;color:#d19911;}
+
 /* 不可用状态 */
 .disabled{filter:alpha(opacity=50);opacity:.5;cursor:not-allowed;}
 
@@ -202,6 +240,7 @@ background-image:-webkit-gradient(linear, left top, right top, color-stop(0, #ff
 background-image:-webkit-linear-gradient(left, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
 background-image:linear-gradient(to right, #ffffff 0%, #ffffee 90%, #00a3ef 100%);
 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff00a3ef', GradientType=1);/*1水平渐变，0垂直，defalut 0*/
+/*透明度相关滤镜在IE下使用时尽量只用于最里层元素，如果用于父元素，而子元素需要在父元素之外显示比如子元素定位(子元素溢出)，使用透明度相关滤镜会造成父元素形成overflow:hidden的效果，即使强制使用overflow:visible也无用*/
 *zoom:1;/*渐变元素若未定义宽高需要触发layout*/}
 
 /* hack实例 */
@@ -217,7 +256,7 @@ _background-color:#00f;/*for IE6*/}
 .hack20140411{border:1px solid #f00;}
 }
 /*forIE9-11，其他内核*/
-:root .fixheader{background:rgba(62,148,221,.85);filter:none;}
+:root .hack20140411{}
 
 /* 气泡示例 */
 .bubbles{position:relative;left:0;top:0;border:2px solid #09f;padding:30px;_zoom:1;/*IE6必须触发layout*/margin:0 50px 20px;}
@@ -244,3 +283,13 @@ _background-color:#00f;/*for IE6*/}
 
 
 
+div.canhover:hover, div.h{background:#0f0;}
+.testhover{font-size: 100px;}
+/*
+ *.canhover添加后再利用.h类可使用鼠标经过的样式 
+ * */
+.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){e.attachEvent("onmouseenter",function(){if(!/(\\s|^)h(\\s|$)/.test(e.className)){e.className+=" h";}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(/(\\s+|^)h(\\s|$)/,'')})}}(this));}
+/*IE6图片最大宽高及IE图片缩小失真，有锯齿的 bug，使用时请注意为IE6特别添加_max-width、_max-height指定多少px，且图片不可定宽高img{_max-width:100px;_max-height:100px;}*/
+.xhide{overflow-x:hidden;}
+.yhide{overflow-y:hidden;}
+img{max-width:100%;max-height:100%;-ms-interpolation-mode:bicubic;_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var c=e.currentStyle,i,m=c['max-width']!='100%'&&parseInt(c['max-width']||0),n=c['max-height']!='100%'&&parseInt(c['max-height']||0),l=function(){var w=i.width,h=i.height,j=m/w,k=n/h;if(!m){if(k<1){e.height=h*k;}}else if(!n){if(j<1){e.width=w*j;}}else if(j<1||k<1){if(j<=k){e.width=w*j;}else{e.height=h*k;}}c=m=n=w=h=j=k=i.onload=i=null;window.CollectGarbage&&setTimeout(window.CollectGarbage,1);};if(m||n){i=new Image();i.onload=l;i.src=e.src;}}}(this));}

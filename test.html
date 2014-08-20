@@ -12,23 +12,90 @@
 <link type="text/css" rel="stylesheet" href="css/index.css"/>
 </head>
 <body class="minwidth">
+<!-- header -->
 <div class="fixheader">
+	<div class="ie_gradient_fix"></div>
 	<!-- iframe禁止右击fixed鼠标在iframe区域右击刷新时不刷新整个页面的bug -->
-	<iframe width="100%" class="hideselect4ie6" align="top" src="javascript:document.oncontextmenu=null" tabindex="-1" frameborder="0" scrolling="no"></iframe>
+	<iframe width="100%" class="hideselect4ie6" align="top" src="javascript:void(function(){document.oncontextmenu=null}())" tabindex="-1" frameborder="0" scrolling="no"></iframe>
 	<div class="clear">
-		<div class="fl">
-			s
-		</div>
+		<h1 class="fl logo" title="">
+			<a href="./">http://reyhappen.github.io/</a>
+		</h1>
 		<div class="op fr">
 			d
 		</div>
+		<div class="fluid">
+			<ul class="nav">
+				<li class="nav_item" data-hover="hover">
+					<div class="nav_header"><a href="#" class="curr"><i class="ico ico_icenter"></i><span>个人中心</span></a></div>
+				</li>
+				<li class="nav_item" data-hover="hover">
+					<div class="nav_header"><a href="#"><i class="ico ico_homepage"></i><span>我的主页</span><i class="arrow_down arrow4 arrow_gray"></i></a></div>
+					<div class="nav_body">
+						<a href="#">asdsa</a>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
-<div class="top">
-	<div class="bubbles bubble1">对话气泡貌似很屌的样子：正角<i class="bubble_border"></i><span class="bubble_bg"></span></div>
-	<div class="bubbles bubble2">对话气泡貌似很屌的样子：斜角<i class="bubble_border"></i><span class="bubble_bg"></span></div>
+<!-- /header -->
+
+<!-- #topwrap -->
+<div id="topwrap">
+	<div class="top">
+		<div id="bubble1" class="bubbles bubble1">对话气泡貌似很屌的样子：正角<i class="bubble_border"></i><span class="bubble_bg"></span></div>
+		<div class="bubbles bubble2">对话气泡貌似很屌的样子：斜角<i class="bubble_border"></i><span class="bubble_bg"></span></div>
+	</div>
 </div>
-<button style="width:50px;height:30px;background:url(image/icon_ins.gif)" class="disabled">不可用按钮</button>
+<!-- /#topwrap -->
+
+<!-- #middle -->
+<div id="middle">
+	页面基本结构：
+	<pre>
+		&lt;body class="minwidth"&gt;
+			&lt;!-- header --&gt;
+			&lt;div class="fixheader"&gt;
+			&lt;/div>
+			&lt;!-- /header --&gt;
+			&lt;!-- #topwrap --&gt;
+			&lt;div id="topwrap"&gt;
+			&lt;/div&gt;
+			&lt;!-- /#topwrap --&gt;
+			&lt;!-- #middle --&gt;
+			&lt;div id="middle"&gt;
+			&lt;/div&gt;
+			&lt;!-- /#middle --&gt;
+			&lt;!-- #footer --&gt;
+			&lt;div id="footer"&gt;
+			&lt;/div&gt;
+			&lt;!-- /#footer --&gt;
+		&lt;/body&gt;
+	</pre>
+	
+	<div class="imgbox200x200">
+		<div>
+			<img src="http://youimg1.c-ctrip.com/target/tg/329/068/977/1b1a2bdf1d1a49f792cea23045fd193a.jpg" />
+		</div>
+	</div>
+	<div class="imgbox100x100">
+		<div>
+			<img src="http://pic1.win4000.com/wallpaper/3/53912df47efcd.jpg" />
+		</div>
+	</div>
+	
+	<div style="height:100px;border:1px solid #f00" class="testhover canhover">dsadas</div>
+</div>
+<!-- /#middle -->
+
+<!-- #footer -->
+<div id="footer">
+	(c) Copyright 2014 leihaipeng. All Rights Reserved. 
+</div>
+<!-- /#footer -->
+
+<button style="width:50px;height:30px;background:url(image/sprite.png)" class="disabled">不可用按钮</button>
 <select name="" id="">
 	<option>我是select</option>
 	<option>我是select</option>
@@ -38,12 +105,29 @@
 	<span class="arrow_down arrow7 arrow_gray"></span>
 </div>
 <div style="position:relative;" class="gradient20140411">
-	<iframe width="100%" id="srcchange" src="javascript:document.write('<center style=\'width:100%;padding:50px 0;\'>正在加载中，请稍后...</center>');" frameborder="0"></iframe>
+	<iframe width="100%" name="srcchange" id="srcchange" src="index.html" frameborder="0"></iframe><a target="srcchange" href="testiframeloading.php">换个src</a>
+<iframe width="100%" class="" align="top" src="javascript:void(function(){document.oncontextmenu=null;}())" tabindex="-1" frameborder="0" scrolling="no"></iframe>
 <script>
+//var iframe = document.getElementById('srcchange');
+//setTimeout(function(){
+//	iframe.src = 'index.html';
+//},1000);
+var iframe = document.getElementById('srcchange').contentWindow;
+window.onbeforeunload = function(){
+	//alert('父窗口')
+	iframe.onbeforeunload = null;
+}
+/*
+//js操作iframe切换地址
 var iframe = document.getElementById('srcchange');
-	setTimeout(function(){
-		iframe.src='index.html';
-	},3000);
+setTimeout(function(){
+	iframe.src='index.html';
+,100);
+iframe.nextSibling.onclick = function(){
+	iframe.contentWindow.document.write("加载中...");
+	iframe.src = 'testiframeloading.php';
+}}
+*/
 </script>
 	
 	
@@ -123,8 +207,59 @@ as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd<br />
 	<div class="resetfs">asdasdasdasd</div>
 </div>
 <a id="gotop" href="#" title="返回顶部">返回顶部</a>
+<script src="js/jquery.js"></script>
 <script>
-//alert(123)
+/*
+if(!window.XMLHttpRequest){
+	document.onmouseover = function(){
+		var t = window.event.srcElement;
+		if(t.getAttribute("data-hover")){
+			alert(t)
+			t.className = t.className + ' ' + 'hover';
+		}
+	}
+	document.onmouseout = function(){
+		var t = window.event.srcElement;
+		if(t.getAttribute("data-hover")){
+			t.className = t.className.replace("","");
+		}
+	}
+}}
+
+document.getElementsByTagName("ul")[0].getElementsByTagName("li")[0].onmouseenter = function(){
+	alert(132)
+}
+*/
+
+var bubble1 = document.getElementById("bubble1");
+(function(win){
+	//document.attachEvent("onmouseover", function(){
+	document.onmouseover = function(ae){
+		/*
+		var e = window.event || ae ;  
+			    var s = e.fromElement || e.relatedTarget ;  
+			    if( !(s == this || this.getElementsByTagName("body")[0].contains(s)) ){
+		            alert("IE: 你 in 了 ！");  
+		        }
+		*/
+		/*
+		var e = win.event, f = e.fromElement,
+					t = e.toElement, s = e.srcElement;
+				e.cancelBubble = true;
+				if(checkFather(s,e)) bubble1.appendChild( document.createTextNode('('+f.tagName+'|'+t.tagName+'|'+s.tagName+')') );
+		*/
+	}//);
+})(window);
+function checkFather(that,e){
+	var parent = e.fromElement;
+	 try{
+	    while(parent && parent !== that){
+	        parent = parent.parentNode; 
+	    }
+	    return (parent !== that);
+	}catch(e){}
+}
+
 </script>
 </body>
 </html>

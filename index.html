@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>前端开发UI组件</title>
     <link type="text/css" rel="stylesheet" href="css/base.css"/>
-    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
     <link type="text/css" rel="stylesheet" href="css/codemirror.css"/>
     <link type="text/css" rel="stylesheet" href="css/monokai.css"/>
     <style>
@@ -36,10 +36,10 @@
         #codeRun:hover, #codeClose:hover { background:#F60; text-decoration:none; }
         .code-box { margin:10px; }
         .code-box textarea { height:80px; }
-    </style>
+    </style>-->
 </head>
 <body>
-<h1 class="page-title">前端开发UI组件</h1>
+<!--<h1 class="page-title">前端开发UI组件</h1>
 <h2 class="ui-title ui-title-classify">文字列表类</h2>
 <div class="ui-list-wrapper">
     <ul class="ui-list">
@@ -2209,8 +2209,16 @@
             </div>
         </li>
     </ul>
-</div>
-<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</div>-->
+<script>
+window.onbeforeunload = function(){
+	//alert('主子窗口')
+	try{
+		document.write('<center style="width:100%;padding:50px 0;">正在加载中，请稍后...</center>');
+	}catch(e){}
+}
+</script>
+<!--<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>
 <script type="text/javascript" src="js/codemirror.js"></script>
 <script type="text/javascript" src="js/css.js"></script>
@@ -2222,6 +2230,6 @@
     $(function() {
         $('a.ui-list-imgbox').lightBox();
     });
-</script>
+</script>-->
 </body>
 </html>

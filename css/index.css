@@ -1,6 +1,10 @@
 @charset "utf-8";
 
-.fixheader{height:45px;overflow-y:hidden;}
-.fixheader .hideselect4ie6{height:100%;}
 
-.top{_zoom:1;/*IE6必须触发layout否则其子元素会受padding的影响*/padding-top:60px;}
+.imgbox200x200{background:red;padding:40px;}
+.imgbox200x200 div{width:200px;border:1px solid #000;}
+.imgbox200x200 div img{_max-width:200px;}
+
+.imgbox100x100{background:blue;padding:40px;}
+.imgbox100x100 div{width:100px;height:100px;border:1px solid #000;}
+.imgbox100x100 div img{_max-width:100px;_max-height:100px;}
