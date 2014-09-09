@@ -26,10 +26,10 @@
 		</div>
 		<div class="fluid">
 			<ul class="nav">
-				<li class="nav_item" data-hover="hover">
+				<li class="nav_item canhover">
 					<div class="nav_header"><a href="#" class="curr"><i class="ico ico_icenter"></i><span>个人中心</span></a></div>
 				</li>
-				<li class="nav_item" data-hover="hover">
+				<li class="nav_item canhover">
 					<div class="nav_header"><a href="#"><i class="ico ico_homepage"></i><span>我的主页</span><i class="arrow_down arrow4 arrow_gray"></i></a></div>
 					<div class="nav_body">
 						<a href="#">asdsa</a>
@@ -84,8 +84,9 @@
 			<img src="http://pic1.win4000.com/wallpaper/3/53912df47efcd.jpg" />
 		</div>
 	</div>
+	<div style="border: 1px solid #00A3EF;"><div class="fl">左浮动元素</div>我后面的元素专为解决一些由编辑器添加的带有浮动元素而产生本父元素塌陷的bug，此解决方案不会像在ie6,7下父元素添加.clear一样使内部定位元素错位或者内部清除浮动元素错位<div class="sclear"></div></div>
+	<div style="height:100px;border:1px solid #f00" class="testhover canhover" ie6hover="hover">dsadas</div>
 	
-	<div style="height:100px;border:1px solid #f00" class="testhover canhover">dsadas</div>
 </div>
 <!-- /#middle -->
 
@@ -96,10 +97,22 @@
 <!-- /#footer -->
 
 <button style="width:50px;height:30px;background:url(image/sprite.png)" class="disabled">不可用按钮</button>
-<select name="" id="">
-	<option>我是select</option>
-	<option>我是select</option>
+<select name="" id="TEST_hasdisabledoptions" class="hasdisabledoptions">
+	<option>1我是可选option</option>
+	<option disabled="disabled">2我是不可选option</option>
+	<option>3我是可选option</option>
+	<option disabled="disabled">4我是不可选option</option>
 </select>
+<script>
+	var TEST_hasdisabledoptions = document.getElementById('TEST_hasdisabledoptions');
+	for(var i=0;i<1000;i++){
+		var opt = new Option('name'+i,'value'+i);
+		if(i % 2 == 0){
+			opt.disabled = true;
+		}
+		TEST_hasdisabledoptions.add(opt)
+	}
+</script>
 <div class="hack20140411">hack20140411</div>
 <div style="padding:20px;background:#f00;">
 	<span class="arrow_down arrow7 arrow_gray"></span>
@@ -209,56 +222,6 @@ as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd<br />
 <a id="gotop" href="#" title="返回顶部">返回顶部</a>
 <script src="js/jquery.js"></script>
 <script>
-/*
-if(!window.XMLHttpRequest){
-	document.onmouseover = function(){
-		var t = window.event.srcElement;
-		if(t.getAttribute("data-hover")){
-			alert(t)
-			t.className = t.className + ' ' + 'hover';
-		}
-	}
-	document.onmouseout = function(){
-		var t = window.event.srcElement;
-		if(t.getAttribute("data-hover")){
-			t.className = t.className.replace("","");
-		}
-	}
-}}
-
-document.getElementsByTagName("ul")[0].getElementsByTagName("li")[0].onmouseenter = function(){
-	alert(132)
-}
-*/
-
-var bubble1 = document.getElementById("bubble1");
-(function(win){
-	//document.attachEvent("onmouseover", function(){
-	document.onmouseover = function(ae){
-		/*
-		var e = window.event || ae ;  
-			    var s = e.fromElement || e.relatedTarget ;  
-			    if( !(s == this || this.getElementsByTagName("body")[0].contains(s)) ){
-		            alert("IE: 你 in 了 ！");  
-		        }
-		*/
-		/*
-		var e = win.event, f = e.fromElement,
-					t = e.toElement, s = e.srcElement;
-				e.cancelBubble = true;
-				if(checkFather(s,e)) bubble1.appendChild( document.createTextNode('('+f.tagName+'|'+t.tagName+'|'+s.tagName+')') );
-		*/
-	}//);
-})(window);
-function checkFather(that,e){
-	var parent = e.fromElement;
-	 try{
-	    while(parent && parent !== that){
-	        parent = parent.parentNode; 
-	    }
-	    return (parent !== that);
-	}catch(e){}
-}
 
 </script>
 </body>

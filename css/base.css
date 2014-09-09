@@ -10,7 +10,6 @@ html{color:#444;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;_backgro
 /* 在基础样式中 body 尽量不控制背景颜色等属性，html,body不能设置高度100%会对iframe自适应产生错误 */
 body{word-wrap:break-word;word-break:break-all;line-height:1.5;font-family:SimSun, Arial, Helvetica, sans-serif;/*开发前强制IE字体为宋体尽量不造成在xp环境下由于没有雅黑字体产生行高不一致从而错位*/-webkit-font-smoothing:antialiased;/*mac 下字体抗锯齿*/}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
-input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="file"]>input[type="button"]::-moz-focus-inner{margin:0;padding:0;}
 
 /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
@@ -73,6 +72,15 @@ a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:all 0.3s ease-in-ou
 .fr{float:right;}
 .clear{*zoom:1;}
 .clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.sclear{clear:both;}
+
+/*定位*/
+.posrl0t0, .posrl0b0, .posal0t0, .posal0b0{left:0;}
+.posrr0t0, .posrr0b0, .posar0t0, .posar0b0{right:0;}
+.posrl0t0, .posrr0t0, .posal0t0, .posar0t0{top:0;}
+.posrl0b0, .posrr0b0, .posal0b0, .posar0b0{bottom:0;}
+.posrl0t0, .posrr0t0, .posrr0b0, .posrl0b0{position:relative;}
+.posal0t0, .posar0t0, .posar0b0, .posal0b0{position:absolute;}
 
 /* 元素垂直居中对齐 */
 .dis_ibvt{display:inline-block;*display:inline;*zoom:1;vertical-align:top;}
@@ -176,7 +184,7 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 .nav .nav_item .nav_header a:hover .arrow_down{border-bottom:4px solid #ddd;border-top:0 none;}
 :root .nav .nav_item .nav_header a:hover .arrow_down{border-bottom:0 none;border-top:4px solid #ddd;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(0);transform:rotate(180deg);}
 .nav .nav_item .nav_body{display:none;}
-.nav .nav_item:hover .nav_body, .nav li.hover .nav_body{display:block;}/*若导航标签发生改变，此处li标签可能也要相应改变(利用jquery实现hover)*/
+.nav .nav_item:hover .nav_body, .nav li.hover .nav_body{display:block;}
 
 
 .top{_zoom:1;/*IE6必须触发layout否则其子元素会受padding的影响*/padding-top:55px;}
@@ -283,7 +291,7 @@ _background-color:#00f;/*for IE6*/}
 
 
 
-div.canhover:hover, div.h{background:#0f0;}
+div.canhover:hover, div.hover{background:#0f0;}
 .testhover{font-size: 100px;}
 /*
  *.canhover添加后再利用.h类可使用鼠标经过的样式 
@@ -291,7 +299,8 @@ div.canhover:hover, div.h{background:#0f0;}
  * 要想父辈祖辈元素使用hover必须去循环判断鼠标经过的当前target(srcElement)祖辈或者父辈元素是否具有canhover类，
  * 这样就更耗费性能了，因此将事件代理否决
  * */
-.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){e.attachEvent("onmouseenter",function(){if(!/(\\s|^)h(\\s|$)/.test(e.className)){e.className+=" h";}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(/(\\s+|^)h(\\s|$)/,'')})}}(this));}
+select.hasdisabledoptions{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){e.setAttribute("selectIndex",e.selectedIndex);e.attachEvent("onfocusin",function(){var s=e.options;for(var i=0,l=s.length;i<l;i++){if(s[i].disabled){s[i].style.color='graytext';}}});e.attachEvent("onchange",function(){if(e.options[e.selectedIndex].disabled){e.selectedIndex=e.getAttribute("selectIndex");}e.setAttribute("selectIndex",e.selectedIndex);});}}(this));}
+.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var h=e.getAttribute('ie6hover'),r=new RegExp('(\\\\s|^)'+h+'(\\\\s|$)');e.attachEvent("onmouseenter",function(){if(!r.test(e.className)){e.className+=" "+h}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(r,'')})}}(this));}
 /*IE6图片最大宽高及IE图片缩小失真，有锯齿的 bug，使用时请注意为IE6特别添加_max-width、_max-height指定多少px，且图片不可定宽高img{_max-width:100px;_max-height:100px;}*/
 .xhide{overflow-x:hidden;}
 .yhide{overflow-y:hidden;}
