@@ -149,7 +149,7 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 .ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
 
 /* 最小页面宽度 */
-.mwidth960{min-width:960px;_width:expression((document.documentElement.clientWidth||document.body.clientWidth)<960?'960px':'');}
+.mwidth960{_width:expression(document.documentElement.clientWidth<960?"960px":"");min-width:960px;}
 /* 主体居中布局 */
 .cpage{width:960px;margin:0 auto;}
 
@@ -196,7 +196,7 @@ iframe.hideselect4ie6{position:absolute;left:0;top:0;z-index:-1;opacity:0;filter
 #footer{z-index:0;}
 
 /*返回顶部*/
-#gotop{position:fixed;right:0;bottom:20px;_position:absolute;z-index:3;width:30px;height:30px;overflow:hidden;text-indent:-100px;border-radius:3px;background-image:url(about:blank);/*修复大部分IE与透明度有关（透明度比如alpha，png，gradient为透明时被穿透）的bug*/background-color:rgba(62,148,221,.85);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-50));}
+#gotop{position:fixed;right:0;bottom:20px;_position:absolute;z-index:3;width:30px;height:30px;overflow:hidden;text-indent:-100px;border-radius:3px;background-image:url(about:blank);/*修复大部分IE与透明度有关（透明度比如alpha，png，gradient为透明时被穿透）的bug*/background-color:rgba(62,148,221,.85);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d93e94dd',endColorstr='#d93e94dd');_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-50));_left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-50));}
 :root #gotop{filter:none;-ms-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
 #gotop:hover{background-color:rgba(255,0,0,.55);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#90ff0000',endColorstr='#90ff0000');}
 :root #gotop:hover{filter:none;}
