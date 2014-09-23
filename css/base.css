@@ -65,6 +65,7 @@ ins,a{text-decoration:none;}
 
 /* 全局链接样式 */
 a{color:#2b84d0;outline:0 none;cursor:pointer;-ms-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;/*渐进增强*/}
+a[disabled]{color:graytext;}
 
 /* 浮动与清理浮动 */
 .fl,.fr{display:inline;}
@@ -300,7 +301,7 @@ div.canhover:hover, div.hover{background:#0f0;}
  * 这样就更耗费性能了，因此将事件代理否决
  * */
 select.hasdisabledoptions{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){e.setAttribute("selectIndex",e.selectedIndex);e.attachEvent("onfocusin",function(){var s=e.options;for(var i=0,l=s.length;i<l;i++){if(s[i].disabled){s[i].style.color='graytext';}}});e.attachEvent("onchange",function(){if(e.options[e.selectedIndex].disabled){e.selectedIndex=e.getAttribute("selectIndex");}e.setAttribute("selectIndex",e.selectedIndex);});}}(this));}
-.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var h=e.getAttribute('ie6hover'),r=new RegExp('(\\\\s|^)'+h+'(\\\\s|$)');e.attachEvent("onmouseenter",function(){if(!r.test(e.className)){e.className+=" "+h}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(r,'')})}}(this));}
+.canhover{_unicode-bidi:expression(function(e){e.style.unicodeBidi='normal';if(!window.XMLHttpRequest){var h=e.getAttribute('ie6hover'),r=new RegExp('(^|\\\\s*)'+h+'(\\\\s*|$)');e.attachEvent("onmouseenter",function(){if(!r.test(e.className)){e.className+=" "+h}});e.attachEvent("onmouseleave",function(){e.className=e.className.replace(r,' ')})}}(this));}
 /*IE6图片最大宽高及IE图片缩小失真，有锯齿的 bug，使用时请注意为IE6特别添加_max-width、_max-height指定多少px，且图片不可定宽高img{_max-width:100px;_max-height:100px;}*/
 .xhide{overflow-x:hidden;}
 .yhide{overflow-y:hidden;}
