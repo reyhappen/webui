@@ -37,6 +37,69 @@
         .code-box { margin:10px; }
         .code-box textarea { height:80px; }
     </style>-->
+
+//alert dialog && confirm dialog
+;(function(win){
+	//alert dialog
+	var oldAlert = window.alert;
+	window.alert = newAlert;
+	function newAlert(message, fn, title){
+		insertCss(arguments);
+		insertWrap(message, 0, fn, title);
+	}
+	
+	//confirm dialog
+	var oldConfirm = window.confirm;
+	window.confirm = newConfirm;
+	function newConfirm(message, fn, title){
+		insertCss(arguments);
+		insertWrap(message, 1, fn, title);
+	}
+	
+	newAlert.cssloaded = newConfirm.cssloaded = false;
+	
+	function insertCss(args){
+		if(!args.callee.cssloaded){
+			var h = document.getElementsByTagName('head'), stylesheet = '.back-dialog-bg{position: fixed;left:0;top:0;z-index:10000;width:100%;height:100%;overflow:hidden;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#44000000",endColorstr="#44000000");}.back-dialog-bg>dl,.back-dialog-bg>dl>dd[role=dialogcontent],.back-dialog-bg>dl>dd[role=dialogfooter] button{box-sizing:border-box;}:root .back-dialog-bg{background: rgba(0,0,0,.25);filter:none;}.back-dialog-bg>dl{position: absolute;top:50%;left:50%;width:500px;min-height:200px;margin-top:-100px;margin-left:-250px;border:3px solid #a5a5a5;background:#fff;border-radius:5px;text-align:center;}.back-dialog-bg>dl>dt{padding-left:20px;background:#f3f3f3;line-height:42px;zoom:1;}.back-dialog-bg>dl>dt:after{content:"";display:block;clear:both;overflow:hidden;}.back-dialog-bg>dl>dt>h6{float:left;margin:0;font:normal normal normal 16px/42px "microsoft yahei";}.back-dialog-bg>dl>dt>button{float:right;width:42px;height:42px;padding:0;border:0;background:#f3f3f3;cursor:pointer;font:normal normal normal 18px/42px arial;}.back-dialog-bg>dl>dt>button:hover{background-color:#ddd;}.back-dialog-bg>dl>dd{margin:0;}.back-dialog-bg>dl>dd[role=dialogcontent]{box-sizing:border-box;padding:30px 20px;}.back-dialog-bg>dl>dd[role=dialogfooter]{padding:20px;}.back-dialog-bg>dl>dd[role=dialogfooter] button{padding:5px 30px;border:0;margin:0 20px;font:normal normal normal 14px/24px "microsoft yahei";opacity:.8;filter:alpha(opacity=80);}:root .back-dialog-bg>dl>dd[role=dialogfooter] button{filter:none;}.back-dialog-bg>dl>dd[role=dialogfooter] button:hover{opacity:1;filter:alpha(opacity=100);}:root .back-dialog-bg>dl>dd[role=dialogfooter] button:hover{filter:none;}.back-dialog-bg>dl>dd[role=dialogfooter] button.dialog-btn-confirm{background:#ff4b01;border:1px solid #ff4b01;color:#fff;}.back-dialog-bg>dl>dd[role=dialogfooter] button.dialog-btn-cancel{background:#f9f9f9;border:1px solid #e0e0e0;color:#000;}', style = document.createElement('style');
+			style.type = "text/css";
+			if(style.styleSheet){
+				style.styleSheet.cssText = stylesheet;
+			}else{
+				style.innerHTML = stylesheet;
+			}
+			if(h.length){
+				h[0].appendChild(style);
+			}else{
+				document.body.appendChild(style);
+			}
+			args.callee.cssloaded = true;
+		}
+	}
+	
+	function insertWrap(message, btns, fn, title){
+		var wrap = document.createElement('div'), btnshtml = '<button controled="1" role="confirmbtn" class="dialog-btn-confirm">\u786e\u5b9a</button>',
+			btnshtml = btns+1>1 ? btnshtml+'<button controled="1" role="cancelbtn" class="dialog-btn-cancel">\u53d6\u6d88</button>' : btnshtml,
+			html = '<dl><dt><button controled="1">x</button><h6>'+ (title||'\u64cd\u4f5c\u63d0\u793a') +'</h6></dt><dd role="dialogcontent">'+ (message||'\u64cd\u4f5c\u51fa\u9519') +'</dd><dd role="dialogfooter">'+ btnshtml +'</dd></dl>';
+		wrap.className = 'back-dialog-bg';
+		wrap.innerHTML = html;
+		document.body.appendChild(wrap);
+		html = null;
+		wrap.onclick = function(e){
+			var ev = e || window.event, target = ev.target || ev.srcElement, role = target.getAttribute('role'), returnV = false;
+			if(target.tagName.toLocaleLowerCase() == 'button' && target.getAttribute('controled')){
+				ev = wrap.onclick = null;
+				wrap.parentNode.removeChild(wrap);
+				if(target.innerHTML == 'x' || role == 'confirmbtn'){
+					returnV = true;
+				}else if(role == 'cancelbtn'){
+					returnV = false;
+				}
+				wrap = target = null;
+				fn && fn(returnV);
+			}
+		}
+	}
+})(window);
 </head>
 <body>
 <!--<h1 class="page-title">前端开发UI组件</h1>
