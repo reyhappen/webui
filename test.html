@@ -16,7 +16,7 @@
 <div class="fixheader">
 	<div class="ie_gradient_fix"></div>
 	<!-- iframe禁止右击fixed鼠标在iframe区域右击刷新时不刷新整个页面的bug -->
-	<iframe width="100%" class="hideselect4ie6" align="top" src="javascript:void(function(){document.oncontextmenu=null}())" tabindex="-1" frameborder="0" scrolling="no"></iframe>
+	<iframe width="100%" class="hideselect4ie6" align="top" src="javascript:void(function(){document.oncontextmenu=null}())" tabindex="-1" frameborder="0"></iframe>
 	<div class="clear">
 		<h1 class="fl logo" title="">
 			<a href="./">http://reyhappen.github.io/</a>
@@ -49,9 +49,9 @@
 	</div>
 </div>
 <!-- /#topwrap -->
-
 <!-- #middle -->
 <div id="middle">
+	<iframe width="100%" class="" align="top" src="javascript:void(function(){document.open();document.write('<script>document.oncontextmenu=function(){return false}</script>');document.close()}())" tabindex="-1" frameborder="1"></iframe>
 	页面基本结构：
 	<pre>
 		&lt;body class="minwidth"&gt;
@@ -76,16 +76,21 @@
 	
 	<div class="imgbox200x200">
 		<div>
-			<img src="http://youimg1.c-ctrip.com/target/tg/329/068/977/1b1a2bdf1d1a49f792cea23045fd193a.jpg" />
+			<!--<img src="http://youimg1.c-ctrip.com/target/tg/329/068/977/1b1a2bdf1d1a49f792cea23045fd193a.jpg" />-->
 		</div>
 	</div>
 	<div class="imgbox100x100">
 		<div>
-			<img src="http://pic1.win4000.com/wallpaper/3/53912df47efcd.jpg" />
+			<!--<img src="http://pic1.win4000.com/wallpaper/3/53912df47efcd.jpg" />-->
 		</div>
 	</div>
 	<div style="border: 1px solid #00A3EF;"><div class="fl">左浮动元素</div>我后面的元素专为解决一些由编辑器添加的带有浮动元素而产生本父元素塌陷的bug，此解决方案不会像在ie6,7下父元素添加.clear一样使内部定位元素错位或者内部清除浮动元素错位<div class="sclear"></div></div>
-	<div style="height:100px;border:1px solid #f00" class="testhover canhover" ie6hover="hover">dsadas</div>
+	<div id="testhover" style="height:100px;border:1px solid #f00" class=" hoverless testhover dehoverless canhover " ie6hover="hover">测试IE6非a链接纯css鼠标经过效果</div>
+	<script type="text/javascript">
+	document.getElementById('testhover').attachEvent('onmouseenter', function(){
+		this.className = 'hoverless testhover dehoverless';
+	})
+	</script>
 	
 </div>
 <!-- /#middle -->
@@ -115,6 +120,33 @@
 	<option>3我是可选option</option>
 	<option disabled="disabled">4我是不可选option</option>
 </select>
+
+<style>
+.selectw{background:#f00;*height:21px;margin:20px;width:200px;*overflow:hidden;*position:relative;}
+.selectw select{*position:absolute;*width:auto;}
+</style>
+<div class="selectw"><select id="select">
+	<option value="">dshfjsdhfjdshjkdshfjsdhfjdshjkdshfjsdhfjdshjkdshfjsdhfjdshjkdshfjsdhfjdshjkdshfjsdhfjdshjkdshfjsdhfjdshjk</option>
+	<option value="" disabled="disabled">汉字</option>
+</select></div>
+<script>
+var e = document.getElementById('select');
+var p = e.parentNode, s = e.style, w = e.clientWidth;
+	s.unicodeBidi='normal';
+	e.attachEvent('onclick', function(){
+		p.style.overflowX = 'visible';
+		//s.width='auto';
+		//e.parentNode.style.position='relative';s.width='auto';s.position='absolute';
+	});
+	e.attachEvent('onblur', function(){
+		p.style.overflowX = 'hidden';
+		//e.parentNode.style.position='static';s.width=w;s.position='static';
+	});
+	e.attachEvent('onchange', function(){
+		e.blur();
+	});
+</script>
+
 <script>
 	var TEST_hasdisabledoptions = document.getElementById('TEST_hasdisabledoptions');
 	for(var i=0;i<1000;i++){
@@ -131,7 +163,7 @@
 </div>
 <div style="position:relative;" class="gradient20140411">
 	<iframe width="100%" name="srcchange" id="srcchange" src="index.html" frameborder="0"></iframe><a target="srcchange" href="testiframeloading.php">换个src</a>
-<iframe width="100%" class="" align="top" src="javascript:void(function(){document.oncontextmenu=null;}())" tabindex="-1" frameborder="0" scrolling="no"></iframe>
+<iframe width="100%" class="" align="top" src="javascript:void(function(){document.oncontextmenu=null;}())" tabindex="-1" frameborder="0"></iframe>
 <script>
 //var iframe = document.getElementById('srcchange');
 //setTimeout(function(){
@@ -217,7 +249,7 @@ as dh jk as hd as dh jk as hd as dh jk as hd as dh jk as hd<br />
 
 <!-- 弹出层结构 -->
 <div class="popwrap">
-	<iframe class="hideselect4ie6" align="top" src="javascript:document.oncontextmenu=null" tabindex="-1" frameborder="0" scrolling="no"></iframe>
+	<iframe class="hideselect4ie6" align="top" src="javascript:document.oncontextmenu=null" tabindex="-1" frameborder="0"></iframe>
 	<div class="popup">
 		<dl class="dis_ibvm dialog">
 			<dt class="popheader"><h6>弹出框标题</h6><span class="close" title="关闭">x</span></dt>
