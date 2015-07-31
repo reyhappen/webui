@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link type="image/x-icon" rel="shortcut icon" href="http://angrytools.com/include/img/favicon.ico">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>CSS Animation Kit</title>
+		<link href="style5.css" rel="stylesheet" type="text/css">
+		<script language="javascript" src="jquery-1.8.3.min.js.pagespeed.jm.0IhQ85x_cu.js" type="text/javascript"></script>
+		<script src="css-animation-0.5.min.js" type="text/javascript"></script>
+		<script language="javascript" src="inputslider-0.2.min.js" type="text/javascript"></script>
+		<script src="plugins.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div id="header">
+			<div id="headerwrap"><a id="logo" href="http://angrytools.com/">Angrytools<span>.com</span></a></div>
+		</div>
+		<div style="margin:7px auto;width:980px;font-size:16px;font-weight:bold;">
+			<h1 style="font-size:18px"><span style="float:left">CSS <span style="color:#E31700">Animation</span> Kit</span></h1>&nbsp;
+		</div>
+		<script>
+			$(function() {
+				$("body").cssanimation([{
+					"id": "26",
+					"name": "00 how animation works",
+					"parent": "17",
+					"html": "<h2>How css animation works? <\/h2>\n\n<p>1) Start by simple example. We have a box and we want to animate it. <\/p>\n\n<div class='box'> <\/div>\n\n<p>2) We want to change box color and move its position. <\/p>\n\n<div class='box final'> <\/div>\n\n<p>3) Before animation the box has blue background color and after animation the background will be red, also margin-left is 200px.<\/p>\n\n<div class='box'> <\/div>\n<div class='code'>background-color:blue;<\/div>\n<div class='code'>margin-left:0px;<\/div>\n\n<div class='box final'> <\/div>\n<div class='code code-final'>background-color:red;<\/div>\n<div class='code code-final'>margin-left:200px;<\/div>\n\n<p>4) So we define css property for each css position.<\/p>\n\n<div class='code'><pre>\n@keyframes myanimation{\n  0%{\n\tbackground-color:blue;\n        margin-left:0px;\n  }\n  100%{\n\tbackground-color:red;\n        margin-left:200px;\n  }\n}\n<\/pre><\/div>\n\n<p>5) Our animation keyframe is ready, now we have to connect keyframes to box<\/p>\n\n<div class='code'><pre>\ndiv.mybox { \n width:40px;\n height:40px;\n background-color:blue;\n \n animation: myanimation 1s ease 0s infinite normal;\n}\n<\/pre><\/div>\n\n<p>Note: <br\/>\n<b>keyframes<\/b> is a colloection of css style property <br\/><b>animation<\/b> has control keyframes execution sequence<\/p>\n\n<p>6) final animation is ready<\/p>\n<div class='box box-animate'> <\/div>\n\n<p><\/p>",
+					"css": "body{ margin:0 20px; }\n\n.box{\n    display:inline-block;\n    width:40px;\n    height:40px;\n    background-color:blue;\n}\n\n.final{\n    margin-left:200px;\n    background-color:red;\n}\n\n.code{\n    color: navy;\n    font-family: monospace;    \n} \n\n.code-final{margin-left:200px;}\n\n\n@keyframes myanimation{\n  0%{\n\tbackground-color:blue;\n        margin-left:0px;\n  }\n  100%{\n\tbackground-color:red;\n        margin-left:200px;\n  }\n}\n.box-animate{\n    animation: myanimation 3s ease 0s infinite normal;\n}"
+				}, {
+					"id": "15",
+					"name": "01 duration property",
+					"parent": "17",
+					"html": "<h3>animation-duration property<\/h3>\n\n<div class='syntex'><b>animation<\/b>:{name} <span>{duration}<\/span> {timing-function} {delay} {iteration} {direction} {fill-mode}<\/div>\n\n<div class='demo'>    \n    <div class=\"dir-5sec\">5 seconds<\/div>\n    <div class=\"dir-10sec\">10 seconds<\/div>\n    <div class=\"dir-15sec\">15 seconds<\/div>\n<\/div>\n\n<p>control speed of animation<\/p>",
+					"css": "body{font-family:verdana,sans-serif;font-size:12px;}\ndiv.syntex{color:gray;}\ndiv.syntex b{color:black;}\ndiv.syntex span{color:#E81700;}\ndiv.demo {\n border:1px dashed gray;\n padding:1px 5px 5px; margin:10px;\n}\n\ndiv.demo div{  \n background-color:#57F26B; \n width:140px;\n height:20px;\n margin-top:5px;\n padding:5px;\n\n -webkit-animation: movebox 5s linear infinite alternate;\n animation: movebox 5s linear infinite alternate;\n} \n\ndiv.demo div.dir-5sec{ \n    -webkit-animation-duration: 5s;\n    animation-duration: 5s;   \n}\ndiv.demo div.dir-10sec{\n    -webkit-animation-duration: 10s;\n    animation-duration: 10s;  \n}\ndiv.demo div.dir-15sec{ \n    -webkit-animation-duration: 15s;\n    animation-duration: 15s;      \n} \n\n@-webkit-keyframes movebox {\n from {margin-left:0px; }\n to {margin-left:600px; }\n}\n\n@keyframes movebox {\n from {margin-left:0px; }\n to {margin-left:600px; }\n}"
+				}, {
+					"id": "12",
+					"name": "02 timing function property",
+					"parent": "17",
+					"html": "<h3>timing-function property<\/h3>\n\n<div class='syntex'><b>animation<\/b>:{name} {duration} <span>{timing-function}<\/span> {delay} {iteration} {direction} {fill-mode}<\/div>\n\n<div class='demo'>\n    <div class=\"dir-linear\">linear<\/div>\n    <div class=\"dir-ease\">ease<\/div>\n    <div class=\"dir-ease-in\">ease-in<\/div>\n    <div class=\"dir-ease-out\">ease-out<\/div>\n    <div class=\"dir-cubicbezier\">cubicbezier<\/div>\n<\/div>",
+					"css": "body{font-family:verdana,sans-serif;font-size:12px;}\ndiv.syntex{color:gray;}\ndiv.syntex b{color:black;}\ndiv.syntex span{color:#E81700;}\ndiv.demo {\n border:1px dashed gray;\n padding:1px 5px 5px; margin:10px;\n}\n\ndiv.demo div{  \n background-color:#57F26B; \n width:140px;\n height:20px;\n margin-top:5px;\n padding:5px;\n\n-webkit-animation: timingfunc 4s infinite normal;\n animation: timingfunc 4s infinite normal;\n}\n\ndiv.demo div.dir-linear{ \n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n}\ndiv.demo div.dir-ease{\n    -webkit-animation-timing-function: ease;\n    animation-timing-function: ease;\n}\ndiv.demo div.dir-ease-in{ \n    -webkit-animation-timing-function: ease-in;\n    animation-timing-function: ease-in;   \n}\ndiv.demo div.dir-ease-out{\n    -webkit-animation-timing-function: ease-out;\n    animation-timing-function: ease-out;\n}\ndiv.demo div.dir-cubicbezier{\n    -webkit-animation-timing-function: cubic-bezier(0.60,1,0.70,0);\n    animation-timing-function: cubic-bezier(0.60,1,0.70,0);\n}\n\n@-webkit-keyframes timingfunc{\n from {margin-left:0px; }\n to {margin-left:600px; }\n}\n\n@keyframes timingfunc{\n from {margin-left:0px; }\n to {margin-left:600px; }\n}"
+				}, {
+					"id": "14",
+					"name": "03 delay property",
+					"parent": "17",
+					"html": "<h3>animation-delay property<\/h3>\n\n<div class='syntex'><b>animation<\/b>:{name} {duration} {timing-function} <span>{delay}<\/span> {iteration} {direction} {fill-mode}<\/div>\n\n<div class='demo'>\n    <div class=\"dir-nodelay\">0 seconds delay<\/div>\n    <div class=\"dir-delay\"> 3 seconds delay<\/div>\n<\/div>",
+					"css": "body{font-family:verdana,sans-serif;font-size:12px;}\ndiv.syntex{color:gray;}\ndiv.syntex b{color:black;}\ndiv.syntex span{color:#E81700;}\ndiv.demo {\n border:1px dashed gray;\n padding:1px 5px 5px; margin:10px;\n}\n\ndiv.demo div{  \n background-color:#57F26B; \n width:140px;\n height:20px;\n margin-top:5px;\n padding:5px;\n\n -webkit-animation: movebox 5s linear infinite alternate;\n animation: movebox 5s linear infinite alternate;\n}\n\ndiv.demo  div.dir-nodelay{ \n    -webkit-animation-delay: 0s;\n    animation-delay: 0s;   \n}\ndiv.demo  div.dir-delay{\n    -webkit-animation-delay: 3s;\n    animation-delay: 3s;  \n}\n\n@-webkit-keyframes movebox {\n from {margin-left:0px; background-color:#57F26B;}\n to {margin-left:600px; background-color:#83C5FC;}\n}\n\n@keyframes movebox {\n from {margin-left:0px; background-color:#57F26B;}\n to {margin-left:600px; background-color:#83C5FC;}\n}"
+				}, {
+					"id": "16",
+					"name": "04 iteration property",
+					"parent": "17",
+					"html": "<h3>animation-iteration-count property<\/h3>\n\n<div class='syntex'><b>animation<\/b>:{name} {duration} {timing-function} {delay} <span>{iteration}<\/span> {direction} {fill-mode}<\/div>\n\n<div class='demo'>    \n    <div class=\"dir-1time\">1 time<\/div>\n    <div class=\"dir-2time\">2 times<\/div>\n    <div class=\"dir-3time\">3 times<\/div>\n    <div class=\"dir-infinite\">infinite<\/div>\n<\/div>",
+					"css": "body{font-family:verdana,sans-serif;font-size:12px;}\ndiv.syntex{color:gray;}\ndiv.syntex b{color:black;}\ndiv.syntex span{color:#E81700;}\ndiv.demo {\n border:1px dashed gray;\n padding:1px 5px 5px; margin:10px;\n}\n\ndiv.demo div{  \n background-color:#57F26B; \n width:140px;\n height:20px;\n margin-top:5px;\n padding:5px;\n\n -webkit-animation: movebox 5s linear infinite alternate;\n animation: movebox 5s linear infinite alternate;\n} \n\ndiv.demo div.dir-1time{ \n    -webkit-animation-iteration-count: 1;\n    animation-iteration-count: 1;   \n}\ndiv.demo div.dir-2time{ \n    -webkit-animation-iteration-count: 2;\n    animation-iteration-count: 2;   \n}\ndiv.demo div.dir-3time{ \n    -webkit-animation-iteration-count: 3;\n    animation-iteration-count: 3;   \n}\ndiv.demo div.dir-infinite{ \n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;   \n} \n\n@-webkit-keyframes movebox {\n from {margin-left:0px; }\n to {margin-left:600px; }\n}\n\n@keyframes movebox {\n from {margin-left:0px; }\n to {margin-left:600px; }\n}"
+				}, {
+					"id": "11",
+					"name": "05 direction property",
+					"parent": "17",
+					"html": "<h3>animation-direction property<\/h3>\n\n<div class='syntex'><b>animation<\/b>:{name} {duration} {timing-function} {delay} {iteration} <span>{direction}<\/span> {fill-mode}<\/div>\n\n<div class='demo'>    \n    <div class=\"dir-normal\">normal<\/div>\n    <div class=\"dir-reverse\">reverse<\/div>\n    <div class=\"dir-alternate\">alternate<\/div>\n    <div class=\"dir-altrev\">alternate-reverse<\/div>\n<\/div>",
+					"css": "body{font-family:verdana,sans-serif;font-size:12px;}\ndiv.syntex{color:gray;}\ndiv.syntex b{color:black;}\ndiv.syntex span{color:#E81700;}\ndiv.demo {\n border:1px dashed gray;\n padding:1px 5px 5px; margin:10px;\n}\n\ndiv.demo div{  \n background-color:#57F26B; \n width:140px;\n height:20px;\n margin-top:5px;\n padding:5px;\n\n -webkit-animation: movebox 5s infinite alternate;\n animation: movebox 5s infinite alternate;\n} \n\ndiv.demo div.dir-normal{ \n    -webkit-animation-direction: normal;\n    animation-direction: normal;   \n}\ndiv.demo div.dir-reverse{\n    -webkit-animation-direction: reverse;\n    animation-direction: reverse;  \n}\ndiv.demo div.dir-alternate{ \n    -webkit-animation-direction: alternate;\n    animation-direction: alternate;      \n}\ndiv.demo div.dir-altrev{\n    -webkit-animation-direction: alternate-reverse;\n    animation-direction: alternate-reverse;      \n}\n\n@-webkit-keyframes movebox {\n from {margin-left:0px; }\n to {margin-left:600px; }\n}\n\n@keyframes movebox {\n from {margin-left:0px; }\n to {margin-left:600px; }\n}"
+				}, {
+					"id": "13",
+					"name": "06 fill mode property",
+					"parent": "17",
+					"html": "<h3>fill-mode property<\/h3>\n\n<div class='syntex'><b>animation<\/b>:{name} {duration} {timing-function} {delay} {iteration} {direction} <span>{fill-mode}<\/span><\/div>\n\n<div class='demo'>\n    <div class=\"dir-none\">none<\/div> \n    <div class=\"dir-backwards\">backwards<\/div> \n    <div class=\"dir-forwards\">forwards<\/div> \n    <div class=\"dir-both\">both<\/div>\n<\/div>\n\n \n<p>use <b style='color:red'>mouse over<\/b> to start animation<\/p>\n<p>\nfill-mode:none      - no style apply before, after animation<br\/>\nfill-mode:backwards - style apply before start animation ( animation delay require)<br\/>\nfill-mode:forwards  - style apply after complete animation (animation should not infinite) <br\/>\nfill-mode:both      - apply both style before, after animation <br\/>\n<\/p>",
+					"css": "body{font-family:verdana,sans-serif;font-size:12px;}\ndiv.syntex{color:gray;}\ndiv.syntex b{color:black;}\ndiv.syntex span{color:#E81700;}\ndiv.demo {\n border:1px dashed gray;\n padding:1px 5px 5px; margin:10px;\n}\n\ndiv.demo div{  \n background-color:#FFF7A5; \n width:140px;\n height:20px;\n margin-top:5px;\n padding:5px; \n}\n \ndiv.demo:hover div{\n    -webkit-animation: movebox 5s linear 2s 1 normal ;\n    animation: movebox 5s linear 2s 1 normal ;    \n}\ndiv.demo:hover div.dir-none{ \n     -webkit-animation-fill-mode: none;\n     animation-fill-mode: none;\n}\ndiv.demo:hover div.dir-backwards{ \n     -webkit-animation-fill-mode: backwards;\n     animation-fill-mode: backwards;\n}\ndiv.demo:hover div.dir-forwards{ \n     -webkit-animation-fill-mode: forwards;\n     animation-fill-mode: forwards;\n}\ndiv.demo:hover div.dir-both{ \n     -webkit-animation-fill-mode: both;\n     animation-fill-mode: both;\n}\n \n@-webkit-keyframes movebox {\n from {margin-left:0px; background-color:#57F26B;}\n to {margin-left:600px; background-color:#83C5FC;}\n}\n\n@keyframes movebox {\n from {margin-left:0px; background-color:#57F26B;}\n to {margin-left:600px; background-color:#83C5FC;}\n}"
+				}, {
+					"id": "20",
+					"name": "background",
+					"parent": "0",
+					"html": "",
+					"css": ""
+				}, {
+					"id": "9",
+					"name": "background shadow",
+					"parent": "20",
+					"html": "",
+					"css": "html{\n  height: 100%;\n}\nbody {\n min-height: 100%;\n margin:0px;\n background-color:white;\n\n -webkit-animation: bgshadow 2s infinite alternate;\n animation: bgshadow 2s infinite alternate;\n}\n \n@-webkit-keyframes bgshadow {   \n from { box-shadow:0px 0px 88px 88px #bbb inset; }   \n to { box-shadow:0px 0px 44px 44px #bbb inset; }\n}\n\n@keyframes bgshadow {\n from {box-shadow:0px 0px 88px 88px #bbb inset; }   \n to {box-shadow:0px 0px 44px 44px #bbb inset; }\n}"
+				}, {
+					"id": "7",
+					"name": "ball bounce",
+					"parent": "18",
+					"html": "<div class=\"bounce\">\u00a0<\/div>",
+					"css": "div{\n margin:40px auto;\n width:200px;\n height:200px;\n border-radius:100px;\n background-color:#008080;\n\n-webkit-animation: bounce 1s infinite alternate;\n animation: bounce 1s infinite alternate;\n}\n\n@-webkit-keyframes bounce {\n    0%, 100%, 20%, 50%, 80% {\n        -webkit-transform: translateY(0px);\n    }\n    40% {\n        -webkit-transform: translateY(-30px);\n    }\n    60% {\n        -webkit-transform: translateY(-15px);\n    }\n}\n\n@-moz-keyframes bounce {\n    0%, 100%, 20%, 50%, 80% {\n        transform: translateY(0px);\n    }\n    40% {\n        transform: translateY(-30px);\n    }\n    60% {\n        transform: translateY(-15px);\n    }\n}\n.bounce {\n    animation-name: bounce;\n}"
+				}, {
+					"id": "2",
+					"name": "box color",
+					"parent": "18",
+					"html": "<div>\u00a0<\/div>",
+					"css": "div {\n margin:40px auto;\n width:200px;\n height:200px;\n\n -webkit-animation: boxcolor 3s infinite alternate;\n animation: boxcolor 3s infinite alternate;\n}\n\n@-webkit-keyframes boxcolor {   \n from {background: red;}   \n to {background: yellow;}\n}\n\n@keyframes boxcolor {\n from {background: red;}   \n to {background: yellow;}\n}"
+				}, {
+					"id": "3",
+					"name": "box move",
+					"parent": "18",
+					"html": "<div>\u00a0<\/div>",
+					"css": "div { \n background-color:yellow;\n width:100px;\n height:100px;\n\n -webkit-animation: boxcolor 3s infinite alternate;\n animation: boxcolor 3s infinite alternate;\n}\n\n@-webkit-keyframes boxcolor {\n from {margin-left:0px;}\n to {margin-left:400px;}\n}\n\n@keyframes boxcolor {\n from {margin-left:0px;}    \n to {margin-left:400px;}\n}"
+				}, {
+					"id": "10",
+					"name": "cloud",
+					"parent": "18",
+					"html": "<div id=\"cloud\"><\/div>",
+					"css": "body{ background-color: skyblue;}\n#cloud:before {\n    background-color: white;\n    border-radius: 80px;\n    content: \"\";\n    display: inline-block;\n    height: 50px;\n    left: 48px;\n    position: relative;\n    top: -50px;\n    width: 70px;\n  \n}\n#cloud:after {\n    background-color: white;\n    border-radius: 38px 18px 24px 10px;\n    content: \"\";\n    display: inline-block;\n    height: 30px;\n    left: 16px;\n    position: relative;\n    top: -79px;\n    width: 120px;\n   \n}\n#cloud {\n    background-color: white;\n    border-radius: 20px 23px 19px;\n    height: 30px;\n    margin: 150px auto 0;\n    width: 150px;\n    \n    position:absolute;\n    -webkit-animation: marquee 20s linear infinite;\n    animation: marquee 20s linear infinite;\n}\n@-webkit-keyframes marquee {\n    0%   { left: 40em; }\n    100% { left: -20em; }\n}\n@keyframes marquee {\n    0%   { left: 40em; }\n    100% { left: -20em; }\n}"
+				}, {
+					"id": "23",
+					"name": "gradient",
+					"parent": "20",
+					"html": "",
+					"css": "@-webkit-keyframes bggradient {\n        0%{background-position:0% 49%}\n        50%{background-position:100% 52%}\n        100%{background-position:0% 49%}\n    }\n    @-moz-keyframes bggradient {\n        0%{background-position:0% 49%}\n        50%{background-position:100% 52%}\n        100%{background-position:0% 49%}\n    }\n    @-o-keyframes bggradient {\n        0%{background-position:0% 49%}\n        50%{background-position:100% 52%}\n        100%{background-position:0% 49%}\n    }\n    @keyframes bggradient {\n        0%{background-position:0% 49%}\n        50%{background-position:100% 52%}\n        100%{background-position:0% 49%}\n    }\n\nbody{\n    background: linear-gradient(267deg, #ff0000, #0008ff);\n    background-size: 400% 400%;\n    \n    -webkit-animation: bggradient 10s ease infinite;\n    -moz-animation: bggradient 10s ease infinite;\n    -o-animation: bggradient 10s ease infinite;\n    animation: bggradient 10s ease infinite; \n    \n}"
+				}, {
+					"id": "8",
+					"name": "heart pounding",
+					"parent": "18",
+					"html": "<div id=\"heart\" class=\"zoominout\"><\/div>",
+					"css": "#heart {\n    position: relative;\n    margin:80px auto;\n    width:200px;\n    background-color:red;\n    \n    -webkit-animation: zoominout 1s infinite alternate;\n    animation: zoominout 1s infinite alternate;\n}\n\n#heart:before, #heart:after {\n    position: absolute;\n    content: '';\n    left: 70px; top: 0;\n    width: 70px;\n    height: 115px;\n    background: red;\n    \n    -moz-border-radius: 50px 50px 0 0;\n    border-radius: 50px 50px 0 0;\n    -webkit-transform: rotate(-45deg);\n    -moz-transform: rotate(-45deg);\n    -ms-transform: rotate(-45deg);\n    -o-transform: rotate(-45deg);\n    transform: rotate(-45deg);\n    -webkit-transform-origin: 0 100%;\n    -moz-transform-origin: 0 100%;\n    -ms-transform-origin: 0 100%;\n    -o-transform-origin: 0 100%;\n    transform-origin: 0 100%;\n}\n#heart:after {\n    left: 0;\n    -webkit-transform: rotate(45deg);\n    -moz-transform: rotate(45deg);\n    -ms-transform: rotate(45deg);\n    -o-transform: rotate(45deg);\n    transform: rotate(45deg);\n    -webkit-transform-origin: 100% 100%;\n    -moz-transform-origin: 100% 100%;\n    -ms-transform-origin: 100% 100%;\n    -o-transform-origin: 100% 100%;\n    transform-origin :100% 100%;\n}\n\n@-webkit-keyframes zoominout{\n    0% {\n        -webkit-transform: scale(1);\n    }\n    50% {\n        -webkit-transform: scale(1.1);\n    }\n    100% {\n        -webkit-transform: scale(1);\n    }\n}\n@keyframes zoominout{\n    0% {\n        transform: scale(1);\n    }\n    50% {\n        transform: scale(1.1);\n    }\n    100% {\n        transform: scale(1);\n    }\n}\n.zoominout{\n    animation-name: zoominout;\n}"
+				}, {
+					"id": "17",
+					"name": "learning tutorial",
+					"parent": "0",
+					"html": "",
+					"css": ""
+				}, {
+					"id": "19",
+					"name": "loading",
+					"parent": "0",
+					"html": "",
+					"css": ""
+				}, {
+					"id": "5",
+					"name": "loading circle dots",
+					"parent": "19",
+					"html": "<div>\u00a0<\/div>",
+					"css": "div {\n  border-radius:50%;\n  height:2px; width:2px;\n  position:absolute;\n  top:50%; left:50%;\n  margin-top:-1px; margin-left:-1px;\n  box-shadow:\n    -75px -125px 0 40px #6cce74,\n     75px -125px 0 40px #c18d46,\n    150px    0px 0 40px #c14745,\n     75px  125px 0 40px #2e1e5b,\n    -75px  125px 0 40px #9c37a6,\n   -150px    0px 0 40px #76bdd1;\n  -webkit-animation:rotate 12s infinite linear;\n  animation:rotate 12s infinite linear;\n}\n@keyframes rotate {\n  16.67% {\n    box-shadow:\n      -75px -125px 0 40px #76bdd1,\n       75px -125px 0 40px #6cce74,\n      150px    0px 0 40px #c18d46,\n       75px  125px 0 40px #c14745,\n      -75px  125px 0 40px #2e1e5b,\n     -150px    0px 0 40px #9c37a6;\n  }\n  33.33%   {\n    box-shadow:\n      -75px -125px 0 40px #9c37a6,\n       75px -125px 0 40px #76bdd1,\n      150px    0px 0 40px #6cce74,\n       75px  125px 0 40px #c18d46,\n      -75px  125px 0 40px #c14745,\n     -150px    0px 0 40px #2e1e5b;\n  }\n  50%      {\n    box-shadow:\n      -75px -125px 0 40px #2e1e5b,\n       75px -125px 0 40px #9c37a6,\n      150px    0px 0 40px #76bdd1,\n       75px  125px 0 40px #6cce74,\n      -75px  125px 0 40px #c18d46,\n     -150px    0px 0 40px #c14745;\n  }\n  66.67%   {\n    box-shadow:\n      -75px -125px 0 40px #c14745,\n       75px -125px 0 40px #2e1e5b,\n      150px    0px 0 40px #9c37a6,\n       75px  125px 0 40px #76bdd1,\n      -75px  125px 0 40px #6cce74,\n     -150px    0px 0 40px #c18d46;\n  }\n  88.88%   {\n    box-shadow:\n      -75px -125px 0 40px #c18d46,\n       75px -125px 0 40px #c14745,\n      150px    0px 0 40px #2e1e5b,\n       75px  125px 0 40px #9c37a6,\n      -75px  125px 0 40px #76bdd1,\n     -150px    0px 0 40px #6cce74;\n  }\n  100% {\n    transform:rotate(-360deg);\n    box-shadow:\n      -75px -125px 0 40px #6cce74,\n       75px -125px 0 40px #c18d46,\n      150px    0px 0 40px #c14745,\n       75px  125px 0 40px #2e1e5b,\n      -75px  125px 0 40px #9c37a6,\n     -150px    0px 0 40px #76bdd1;\n  }\n}\n@-webkit-keyframes rotate {\n  16.67% {\n    box-shadow:\n      -75px -125px 0 40px #76bdd1,\n       75px -125px 0 40px #6cce74,\n      150px    0px 0 40px #c18d46,\n       75px  125px 0 40px #c14745,\n      -75px  125px 0 40px #2e1e5b,\n     -150px    0px 0 40px #9c37a6;\n  }\n  33.33%   {\n    box-shadow:\n      -75px -125px 0 40px #9c37a6,\n       75px -125px 0 40px #76bdd1,\n      150px    0px 0 40px #6cce74,\n       75px  125px 0 40px #c18d46,\n      -75px  125px 0 40px #c14745,\n     -150px    0px 0 40px #2e1e5b;\n  }\n  50%      {\n    box-shadow:\n      -75px -125px 0 40px #2e1e5b,\n       75px -125px 0 40px #9c37a6,\n      150px    0px 0 40px #76bdd1,\n       75px  125px 0 40px #6cce74,\n      -75px  125px 0 40px #c18d46,\n     -150px    0px 0 40px #c14745;\n  }\n  66.67%   {\n    box-shadow:\n      -75px -125px 0 40px #c14745,\n       75px -125px 0 40px #2e1e5b,\n      150px    0px 0 40px #9c37a6,\n       75px  125px 0 40px #76bdd1,\n      -75px  125px 0 40px #6cce74,\n     -150px    0px 0 40px #c18d46;\n  }\n  88.88%   {\n    box-shadow:\n      -75px -125px 0 40px #c18d46,\n       75px -125px 0 40px #c14745,\n      150px    0px 0 40px #2e1e5b,\n       75px  125px 0 40px #9c37a6,\n      -75px  125px 0 40px #76bdd1,\n     -150px    0px 0 40px #6cce74;\n  }\n  100% {\n    -webkit-transform:rotate(-360deg);\n    box-shadow:\n      -75px -125px 0 40px #6cce74,\n       75px -125px 0 40px #c18d46,\n      150px    0px 0 40px #c14745,\n       75px  125px 0 40px #2e1e5b,\n      -75px  125px 0 40px #9c37a6,\n     -150px    0px 0 40px #76bdd1;\n  }\n}"
+				}, {
+					"id": "4",
+					"name": "loading message",
+					"parent": "19",
+					"html": "<div class=\"loading\">\nLoading\n<span class=\"one\">.<\/span>\n<span class=\"two\">.<\/span>\n<span class=\"three\">.<\/span>\n<\/div>",
+					"css": "div.loading{\n font-size:70px;\n}\n\n.one {\n opacity: 0;\n -webkit-animation: dot 1.3s infinite;\n -webkit-animation-delay: 0.0s;\n animation: dot 1.3s infinite;\n animation-delay: 0.0s;\n}\n \n.two {\n opacity: 0;\n -webkit-animation: dot 1.3s infinite;\n -webkit-animation-delay: 0.2s;\n animation: dot 1.3s infinite;\n animation-delay: 0.2s;\n}\n \n.three {\n opacity: 0;\n -webkit-animation: dot 1.3s infinite;\n -webkit-animation-delay: 0.3s;\n animation: dot 1.3s infinite;\n animation-delay: 0.3s;\n}\n\n@-webkit-keyframes dot {\n 0% { opacity: 0; }\n 50% { opacity: 0; }\n 100% { opacity: 1; }\n}\n@keyframes dot {\n 0% { opacity: 0; }\n 50% { opacity: 0; }\n 100% { opacity: 1; }\n}"
+				}, {
+					"id": "18",
+					"name": "objects",
+					"parent": "0",
+					"html": "",
+					"css": ""
+				}, {
+					"id": "6",
+					"name": "sun",
+					"parent": "18",
+					"html": "<div class='thesun' >\n    <div class='layer-1' >\n        <div class='layer-2' >\n            <div class='layer-3' ><\/div>\n\t<\/div>\n    <\/div>\n<\/div>",
+					"css": "div.thesun { \n    margin: 80px;\n}\n\n.layer-1 { \t\n    width:150px;\n    background-color:#C6BA4A;\n    -webkit-animation: rotatex 6s infinite linear;\n    animation: rotatex 6s infinite linear;\t\n} \n.layer-2{\n    background-color:#C6BA4A;\n    -webkit-transform: rotate(45deg);\n    transform: rotate(45deg);\n}\n.layer-3{ \n    height:150px;\n    background-color:#EFE542;\n    border-radius: 80px;\n}\n@-webkit-keyframes rotatex {\n    100% {\n        -webkit-transform:rotate(360deg);\n    }\n}\n\t\n@keyframes rotatex {\n    100% {\n        transform:rotate(360deg);\n    }\n}"
+				}, {
+					"id": "22",
+					"name": "sunburst",
+					"parent": "20",
+					"html": "<div class=\"sunburst\">\n<div class=\"outer\">\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<b><\/b>\n<\/div>\n<\/div>",
+					"css": ".sunburst {\nwidth: 1368px;\nheight: 680px;\nmargin:-11px -11px -11px -11px;\noverflow: hidden;\nbackground: white;\n}\n .sunburst b {\ndisplay: block;\nwidth: 0;\nheight: 0;\nborder-width: 90px 1000px;\nmargin: -180px 0 0 0;\nborder-color: transparent rgba(0,0,255,0.4);\nborder-style: solid;\n}\n\n.sunburst b:nth-child(1) {\n-webkit-transform:rotate(20deg);\n-moz-transform:rotate(20deg);\n}\n \n.sunburst b:nth-child(2) {\n-webkit-transform:rotate(40deg);\n-moz-transform:rotate(40deg);\n}\n \n.sunburst b:nth-child(3) {\n-webkit-transform:rotate(60deg);\n-moz-transform:rotate(60deg);\n}\n \n.sunburst b:nth-child(4) {\n-webkit-transform:rotate(80deg);\n-moz-transform:rotate(80deg);\n}\n \n.sunburst b:nth-child(5) {\n-webkit-transform:rotate(100deg);\n-moz-transform:rotate(100deg);\n}\n \n.sunburst b:nth-child(6) {\n-webkit-transform:rotate(120deg);\n-moz-transform:rotate(120deg);\n}\n \n.sunburst b:nth-child(7) {\n-webkit-transform:rotate(140deg);\n-moz-transform:rotate(140deg);\n}\n \n.sunburst b:nth-child(8) {\n-webkit-transform:rotate(160deg);\n-moz-transform:rotate(160deg);\n}\n\n.sunburst b:nth-child(9) {\n-webkit-transform:rotate(180deg);\n-moz-transform:rotate(180deg);\n}\n.sunburst .outer {\nwidth: 2000px;\nheight: 910px;\npadding-top: 1090px;\nmargin: -800px 0 0 -310px;\n-webkit-animation-name: rotate;\n-webkit-animation-duration:2s;\n-webkit-animation-iteration-count:infinite;\n-webkit-animation-timing-function:linear;\n-moz-animation-name: rotate;\n-moz-animation-duration:2s;\n-moz-animation-iteration-count:infinite;\n-moz-animation-timing-function:linear;\n}\n\n@-webkit-keyframes rotate {\nfrom { -webkit-transform: rotate(0deg); }\nto { -webkit-transform: rotate(20deg); }\n}\n \n@-moz-keyframes rotate {\nfrom { -moz-transform: rotate(0deg); }\nto { -moz-transform: rotate(20deg); }\n}"
+				}], null, function(trigger_itemid) {
+					if (typeof trigger_itemid != 'undefined') {
+						$("#tab_sample").trigger("click");
+						$(trigger_itemid).trigger('click');
+					} else {
+						$("#sample_dd").val(1).trigger('change');
+					}
+				});
+			});
+		</script>
+		<div id="wrapper" style="">
+			<form target="result" id="run_form">
+				<input type="hidden" id="frm_action" name="frm_action" value="">
+				<input type="hidden" id="frm_css_code" name="frm_css_code" value="">
+				<input type="hidden" id="frm_html_code" name="frm_html_code" value="">
+			</form>
+
+			<table width="100%" cellpadding="0" cellspacing="0">
+				<tr align="left">
+					<td colspan="2">
+						<div id="code_genlbl" style="height: 36px; padding:0px;">
+							<span id="tab_anigen" class="selected">animation generator</span>&nbsp;
+							<span id="tab_sample">samples</span>
+						</div>
+					</td>
+				</tr>
+
+				<tr align="left" valign="top">
+					<td colspan="2">
+
+						<div id="code_generator">
+
+							<div id="animation_panel" class="animation_panel">
+								<h4 style='font-size: 12px;width: 200px;'>Animation</h4>
+								<br/>
+								<div class="field">
+									<label>name &nbsp;<span class='question' data-tooltip="animation-name: css class name bind with keyframes ">?</span></label>
+									<input id="ani-name" value="myanimate">
+									<input id="test_animation_btn" type="button" value="&#9658;" class="abtn" title="Test - timeline header keyframe sequence" />
+								</div>
+								<div class="field">
+									<label>duration &nbsp;<span class='question' data-tooltip="animation-duration: total time of animation in seconds ">?</span></label>
+									<input id="ani-duration" value="2">
+								</div>
+								<div class="field">
+									<label>timing-function &nbsp;<span class='question' data-tooltip="animation-timing-function: define the speed of animation (slow or fast)">?</span></label>
+									<select id="ani-timefun">
+										<option value="linear">linear</option>
+										<option value="ease">ease</option>
+										<option value="ease-in">ease-in</option>
+										<option value="ease-out">ease-out</option>
+									</select>
+								</div>
+								<div class="field">
+									<label>delay &nbsp;<span class='question' data-tooltip="animation-delay: start animation after some pause ">?</span></label>
+									<input id="ani-delay" value="2">
+								</div>
+								<div class="field">
+									<label>iteration-count &nbsp;<span class='question' data-tooltip="animation-iteration-count: number of times of animation execution">?</span></label>
+									<select id="ani-iteration" style="width:80px;">
+										<option value="n">(n) times</option>
+										<option value="-1">infinite</option>
+									</select>
+									<input id="ani-ntime" value="1" />
+								</div>
+								<div class="field">
+									<label>direction &nbsp;<span class='question' data-tooltip="animation-direction: execute keyframe sequence in normal or reverse direction">?</span></label>
+									<select id="ani-direction">
+										<option value="normal">normal</option>
+										<option value="reverse">reverse</option>
+										<option value="alternate">alternate</option>
+										<option value="alternate-reverse">alternate-reverse</option>
+									</select>
+								</div>
+								<div class="field">
+									<label>fill-mode &nbsp;<span class='question' data-tooltip="animation-fill-mode: define what style apply before, after animation">?</span></label>
+									<select id="ani-fill">
+										<option value="">none</option>
+										<option value="forwards">forwards</option>
+										<option value="backwards">backwards</option>
+										<option value="both">both</option>
+									</select>
+								</div>
+							</div>
+
+							<div id="keyframe_panel" style="">
+								<div>
+									<span id="sample_box" style='border-radius:2px;'>sample &nbsp;<select id="sample_dd"></select></span>
+								</div>
+
+								<h4 style='font-size: 12px;width: 200px;'>Keyframe</h4>
+
+								<div id="timeline">
+									<div id="g_wrapper">
+										<div class="g_cont" id="gradient">
+											<style>
+												.key_label {
+													font-size: 10px;
+													height: 36px
+												}
+												.key_label div {
+													display: none
+												}
+												.key_label div.ani-default {
+													margin-top: 19px;
+													display: inline-block
+												}
+												.key_label div.ani-duration {
+													margin-top: 19px
+												}
+												.key_label div.ani-timefun {
+													margin-top: 36px
+												}
+												.key_label div.ani-delay {
+													margin-top: 10px
+												}
+											</style>
+											<div class="key_label">
+												<div id="cs_t" class="ani-default cs_t">0%<span>100%</span></div>
+												<div class="ani-duration">
+													<svg xmlns="http://www.w3.org/2000/svg" width="528px" height="30px">
+														<defs>
+															<marker id="markerArrowRev" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">
+																<path d="M10,2 L10,11 L2,6 L10,2" style="fill: #000088;" />
+															</marker>
+															<marker id="markerArrow" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">
+																<path d="M2,2 L2,11 L10,6 L2,2" style="fill: #000088;" />
+															</marker>
+														</defs>
+														<path style="stroke:#000;stroke-width:1px;fill:none;marker-start:url(#markerArrowRev);marker-end:url(#markerArrow)" d="M0,8 519,8" />
+														<g>
+															<rect fill="#F5F5F5" height="15" width="97" y="0" x="36%"></rect>
+															<text x="39%" y="36%" font-family="sans-serif" font-size="12px" fill="black" id='ani-duration-val'>Seconds</text>
+														</g>
+													</svg>
+												</div>
+												<div class="ani-timefun">
+													<svg xmlns="http://www.w3.org/2000/svg" width="528px" height="25px">
+														<path id='ani-timefun-val' stroke-width="1" stroke="#4682B4" fill="none" d="M0,12 C132,52,375,-25 526,12" />
+													</svg>
+												</div>
+												<div class="ani-delay">
+													<svg xmlns="http://www.w3.org/2000/svg" width="115px" height="25px">
+														<g>
+															<text x="40" y="72%" font-family="sans-serif" font-size="12px" fill="black" id='ani-delay-val'>Seconds</text>
+															<path d="M19.002,9.261l0.659-0.66l0.196,0.195c0.182,0.182,0.477,0.182,0.657,0c0.183-0.181,0.183-0.476,0-0.658l-0.986-0.987	c-0.182-0.182-0.477-0.182-0.658,0c-0.182,0.183-0.182,0.477,0,0.659l0.218,0.216l-0.648,0.648	c-1.129-1.043-2.588-1.731-4.203-1.89V6.179h0.469c0.436,0,0.789-0.354,0.789-0.789c0-0.436-0.354-0.79-0.789-0.79h-2.368	c-0.436,0-0.79,0.354-0.79,0.79c0,0.436,0.354,0.789,0.79,0.789h0.52v0.602h-0.029c-1.709,0.163-3.245,0.917-4.4,2.058L8.026,9.274	c-1.091,1.269-1.755,2.915-1.755,4.721c0,4.003,3.246,7.249,7.249,7.249c4.005,0,7.249-3.246,7.249-7.249	C20.77,12.183,20.1,10.531,19.002,9.261z M13.511,20.004c-3.326,0-6.022-2.696-6.022-6.022c0-3.326,2.697-6.022,6.022-6.022	c3.325,0,6.022,2.696,6.022,6.022C19.533,17.308,16.836,20.004,13.511,20.004z"
+															/>
+															<path d="M13.988,13.443V9.648l-0.438-0.702l-0.498,0.702v3.795c-0.273,0.161-0.458,0.455-0.458,0.795	c0,0.511,0.415,0.925,0.925,0.925s0.926-0.414,0.926-0.925C14.446,13.898,14.262,13.604,13.988,13.443z" />
+														</g>
+													</svg>
+												</div>
+												<div class="ani-iteration"></div>
+												<div class="ani-direction"></div>
+												<div class="ani-fill"></div>
+											</div>
+
+											<div class="s_bg" id="s_bg">
+												<div id="animate_head">&nbsp;</div>
+												<div class="scale"></div>
+											</div>
+											<div class="cs_b" id="cs_b"></div>
+
+										</div>
+									</div>
+									<div id="stopper_box">
+										<input id="b_loc" title="stopper position" type="textbox" style="width:25px" maxlength="3" pattern="\d*" />%
+										<input id="b_delete" type="button" value="delete" title="delete stopper" />
+									</div>
+								</div>
+
+								<div>
+									<textarea id="keyframe-code" placeholder="add css here"></textarea>
+									<div id="keyframe-option">
+
+										<input id="loadruncode" class="abtn" style='border-radius:4px' type="button" title="Update Source and Run" value="Run &#9658;" /> CSS
+										<select id="short-css">
+											<option value="true">Minified CSS</option>
+											<option value="false"> Uglify CSS</option>
+										</select>&nbsp;&nbsp;|&nbsp;&nbsp; HTML
+										<select id="apply-on">
+											<option value="text-html"> 'Animation' Text</option>
+											<option value="box-html"> Box &lt;div&gt;</option>
+											<option value="no-html"> No Update ( only CSS panel update )</option>
+										</select>
+										<!---->
+										<input id="loadcode" class="abtn" type="button" value="Load" style='visibility: hidden;' />
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<!-- left sub menu -->
+						<div id="lmenu" style="display:none">
+							<ul id="lmenucont" class="lmenucont"></ul>
+						</div>
+
+					</td>
+				</tr>
+
+			</table>
+
+			<div style="height:7px">&nbsp;</div>
+
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tbody>
+
+					<tr valign="top">
+						<td>
+							<div id="preview" style='height:275px'>
+								<iframe id="ifrme" name="result" src="" scrolling="auto"></iframe>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<span id="loading"> Loading<span class="one">.</span><span class="two">.</span><span class="three">.</span> </span>
+							<span style='float:right'>
+				<a id="new_code" title="create new animation">new</a>&nbsp;|
+				<a id="dwld_code" title="download code">download</a>&nbsp;|
+				<a id="save_code" title="save current animation">save </a>&nbsp;
+				<input id="run_code" class="abtn" type="button" value="Run Source &#9658;" style='margin:2px'/>
+			</span>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<table id="code_table" width="100%" cellpadding="0" cellspacing="0">
+				<tr align="left">
+					<th><span>css</span></th>
+					<th><span>html</span></th>
+				</tr>
+				<tr>
+					<td>
+						<div class='code_container' style=''>
+							<textarea class='contentA' id="css-code" spellcheck="false"></textarea>
+						</div>
+					</td>
+					<td>
+						<div class='code_container' style=''>
+							<textarea class='contentB' id="html-code" spellcheck="false"></textarea>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<div id="code_rowresizer">&nbsp;</div>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</body>
+
+</html>

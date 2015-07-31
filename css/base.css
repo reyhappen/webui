@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*
  * 有些不可用类名比如.h为所有要使用:hover伪类的元素提供鼠标经过样式类
  * 
@@ -74,6 +74,36 @@ a[disabled]{color:graytext;}
 .clear{*zoom:1;}
 .clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
 .sclear{clear:both;}
+
+/*伪元素*/
+/*
+::after
+::before
+::first-letter
+::first-line
+::-ms-browse
+::-ms-check
+::-ms-clear
+::-ms-expand
+::-ms-fill
+::-ms-fill-lower
+::-ms-fill-upper
+::-ms-reveal
+::-ms-thumb
+::-ms-ticks-after
+::-ms-ticks-before
+::-ms-tooltip
+::-ms-track
+::-ms-value
+::selection
+*/
+/*
+标签用字符实体
+<div>&#x5185&#x90e8&#x524d&#x7f6e&#x5185&#x5bb9</div>
+.chinesecontentin:before{content:'内部前置内容';}
+.chinesecontentin:before{content:'\5185\90e8\524d\7f6e\5185\5bb9';}
+*/
+
 
 /*定位*/
 .posrl0t0, .posrl0b0, .posal0t0, .posal0b0{left:0;}
@@ -258,12 +288,13 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', end
 background-color:#f00\0;/*for IE6-11*/
 background-color:#f0f\9;/*for IE6-10*/
 *background-color:#0ff;/*for IE6-7*/
-_background-color:#00f;/*for IE6*/}
+_background-color:#00f;/*for IE6*/
+background-color:#ccc\9\0;/*for IE9-10*/background-color:#ccc\0\9;/*for IE9-11*/}
 @media \0screen{/*for IE8*/
 .hack20140411{width:30px;background-color:#ff0;}
 }
 @media screen and (min-width:0){/*forIE9-11，其他内核。预先规划css集中化定义。*/
-.hack20140411{border:1px solid #f00;}
+.hack20140411{border:1px solid #ff0;}
 }
 /*forIE9-11，其他内核*/
 :root .hack20140411{}

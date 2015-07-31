@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link type="image/x-icon" rel="shortcut icon" href="http://angrytools.com/include/img/favicon.ico">
+		<style>
+			* {
+				margin: 0px
+			}
+			body {
+				font-family: verdana, sans-serif;
+				font-size: 12px
+			}
+			a {
+				cursor: pointer;
+				color: #009191;
+				text-decoration: none
+			}
+			a:hover {
+				text-decoration: underline
+			}
+			a.abtn {
+				background-color: #4d90fe;
+				background-image: -moz-linear-gradient(center top, #4d90fe, #4787ed);
+				border: 1px solid #3079ed;
+				color: #fff;
+				display: inline-block;
+				font-weight: bold;
+				padding: 5px 20px;
+				text-decoration: none;
+				white-space: nowrap
+			}
+			a.abtn:hover {
+				background-color: #357ae8;
+				background-image: -moz-linear-gradient(center top, #4d90fe, #357ae8);
+				border: 1px solid #2f5bb7
+			}
+			h1 {
+				font-weight: bold;
+				font-family: sans-serif
+			}
+			span.r {
+				color: #e00
+			}
+			ul {
+				list-style: none outside none;
+				padding-left: 16px;
+				padding-top: 10px;
+				color: #848484
+			}
+			div#header {
+				background-color: #061f5e;
+				height: 37px;
+				margin-bottom: 40px;
+				box-shadow: 0 0 38px steelblue
+			}
+			div#headerwrap {
+				margin: 0 auto;
+				width: 990px
+			}
+			a#logo {
+				float: left;
+				color: #fff;
+				font-size: 23px;
+				margin-top: 2px;
+				font-weight: bold;
+				text-decoration: none
+			}
+			a#logo span {
+				font-size: 13px
+			}
+			a#logo:hover {
+				color: #ddd
+			}
+			#homelogo {
+				background-position: -3px 0;
+				background-repeat: no-repeat;
+				color: #fff;
+				cursor: pointer;
+				float: right;
+				font-weight: bold;
+				height: 25px;
+				padding-left: 37px;
+				padding-top: 12px;
+				width: 43px
+			}
+			#homelogo:hover {
+				background-color: #4682b4
+			}
+			#wrapper {
+				margin: 0 auto;
+				width: 980px;
+				border: 1px solid gray;
+				background-color: #f5f5f5
+			}
+			div.heading {
+				margin: 7px auto;
+				width: 980px
+			}
+			div.heading a {
+				font-size: 16px;
+				font-weight: bold;
+				float: right
+			}
+			div.heading h1 {
+				font-size: 16px;
+				float: left
+			}
+			div.heading h1 span {
+				color: #e31700
+			}
+			div.msg {}div.msg p {
+				margin: 0 0 12px;
+				padding: 0 0 11px
+			}
+			#footer {
+				margin: 4px auto;
+				margin-top: 32px;
+				width: 910px;
+				text-align: center;
+				color: #999;
+				font-size: 12px;
+				border-top: 1px solid #add8e6;
+				padding-top: 8px
+			}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Android Button Maker</title>
+		<script language="javascript" src="jquery-1.7.2.min.js.pagespeed.jm.TiC1blcYSb.js" type="text/javascript"></script>
+		<script src="js,_android.button-0.2.min.js,Mjm.APnq-cQoq-.js+vallenato,_vallenato.js,Mjm.MF9ga9FXY2.js.pagespeed.jc.BZlubIdUyz.js"></script>
+		<script src="jscolor.js" type="text/javascript"></script>
+		<script src="inputslider-0.1.min.js,Mjm.qlr3YxlszW.js+inputcircleslider-0.1.min.js,Mjm.WygOimz3Xv.js.pagespeed.jc.s9jeQV4Jox.js"></script>
+		<link rel="stylesheet" href="A.css,,_android.button.css+vallenato,,_vallenato.css,Mcc.PHnKOi4ynA.css.pagespeed.cf._Oeunyutbs.css" type="text/css" media="screen" />
+	</head>
+
+	<body>
+		<div id="header">
+			<div id="headerwrap"><a id="logo" href="http://angrytools.com/">Angrytools<span>.com</span></a></div>
+		</div>
+		<div style="margin:7px auto;width:980px;font-size:16px;font-weight:bold;">
+			<h1 style="font-size:18px"><span style="float:left">Android <span style="color:#E31700">Button</span> Maker</span></h1>&nbsp;
+			<a style="float:right" title="" href="http://angrytools.com/android/#"></a>
+		</div>
+		<div id="wrapper">
+			<div class="">
+
+				<div>
+					<table width="100%" cellspacing="0" cellpadding="4" border="0">
+						<tr valign="top" height="450px;">
+
+							<td width="58%">
+
+								<div class="tooldesc">
+									Android Button Maker is online tool to generate buttons code for Android Apps. Android API provide Drawable Resources where XML file defines geometric shape, including colors, border and gradients.
+									<br/> These button is generating based on shape drawable XML code which load faster compare to normal png buttons. You can customize button properties in setting panel and get source code.
+								</div>
+
+								<div id="previewcont">
+									<center>
+										<input id="preview" class="preview" type="button" />
+									</center>
+								</div>
+
+								<!--<div id="addjson" >Add</div><div id="loadjson" >Load</div>
+					<div id="preset" style="height:200px;width:540px">
+						<div id="presetbtn" data-shape="" style="border-radius: 14px 14px 14px 14px; background: -moz-linear-gradient(32deg, rgb(255, 46, 46) 0%, rgb(4, 9, 138) 50%, rgb(255, 255, 0) 100%) repeat scroll 0% 0% transparent; width: 139px; height: 38px; border-width: 3px; border-color: rgb(4, 36, 84);">
+							&nbsp;</div>				
+					</div>-->
+
+								<script>
+									function codetab_change(tabn, coden, msgn) {
+										$('div.codenametab span').addClass('hide');
+										$('#' + tabn).removeClass('hide');
+										$('.codetab').hide();
+										$('#' + coden).show();
+										$('div.wmsg div').hide();
+										$('#' + msgn).show();
+									}
+								</script>
+								<div class="codenametab">
+									<span onclick="codetab_change('tab_button','code_button','msg_rgba')" id="tab_button">Button</span>
+									<span onclick="codetab_change('tab_shape','code_shape','msg_hex')" class="hide" id="tab_shape">buttonshape.xml</span>
+								</div>
+								<div class="code">
+									<div class="codetab" id="code_button">Code Button</div>
+									<div class="codetab" id="code_shape" style="display:none">
+										<div>&lt;?xml version="1.0" encoding="utf-8"?&gt;</div>
+										<div class="code-shape"></div>
+									</div>
+								</div>
+
+							</td>
+							<td>
+
+								<div id="accordion-container">
+
+									<h2 class="accordion-header">Button</h2>
+									<div class="accordion-content">
+										<div>
+											<span class="lbl">android:text</span>
+											<input type="textbox" class="btn_target txtbx" name="btn_text" id="btn_text" value="Button" />
+										</div>
+										<div>
+											<span class="lbl">android:textColor</span>
+											<input type="textbox" class="btn_target txtbx color" name="btn_textcolor" id="btn_textcolor" value="">
+										</div>
+										<div>
+											<span class="lbl">android:textSize</span>
+											<input type="textbox" class="btn_target txtbx" name="btn_textsize" id="btn_textsize" value="">
+										</div>
+										<div style="margin-top:4px;padding-top:2px;border-top:1px solid #c7c7c7">
+											<span id="shadowlbl" class="lbl">Shadow</span>
+											<input id="shadowchk" class="" type="checkbox" />
+										</div>
+										<div class="shadow">
+											<span class="lbl">android:shadowColor</span>
+											<input type="textbox" class="btn_target txtbx color" name="btn_shadowcolor" id="btn_shadowcolor" value="">
+										</div>
+										<div class="shadow">
+											<span class="lbl">android:shadowDx</span>
+											<input type="textbox" class="btn_target txtbx" name="btn_shadowdx" id="btn_shadowdx" value="">
+										</div>
+										<div class="shadow">
+											<span class="lbl">android:shadowDy</span>
+											<input type="textbox" class="btn_target txtbx" name="btn_shadowdy" id="btn_shadowdy" value="">
+										</div>
+										<div class="shadow">
+											<span class="lbl">android:shadowRadius</span>
+											<input type="textbox" class="btn_target txtbx" name="btn_shadowradius" id="btn_shadowradius" value="">
+										</div>
+									</div>
+
+									<h2 class="accordion-header">size</h2>
+									<div class="accordion-content">
+										<div>
+											<span class="lbl">android:width</span>
+											<input id="size_width" name="size_width" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div>
+											<span class="lbl">android:height</span>
+											<input id="size_height" name="size_height" class="shape_target txtbx" type="textbox" />
+										</div>
+									</div>
+
+									<h2 class="accordion-header">corners</h2>
+									<div class="accordion-content">
+										<div>
+											<span class="lbl">android:radius</span>
+											<input id="corners_radius" name="corners_radius" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div style="margin-top:4px;padding-top:2px;border-top:1px solid #c7c7c7">
+											<span id="radiuslbl" class="lbl"><b>Radius Property</b></span>
+											<input id="radiuschk" class="" type="checkbox" />
+										</div>
+										<div class="radius">
+											<span class="lbl">android:topLeftRadius</span>
+											<input id="corners_topleftradius" name="corners_topleftradius" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div class="radius">
+											<span class="lbl">android:topRightRadius</span>
+											<input id="corners_toprightradius" name="corners_toprightradius" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div class="radius">
+											<span class="lbl">android:bottomLeftRadius</span>
+											<input id="corners_bottomleftradius" name="corners_bottomleftradius" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div class="radius">
+											<span class="lbl">android:bottomRightRadius</span>
+											<input id="corners_bottomrightradius" name="corners_bottomrightradius" class="shape_target txtbx" type="textbox" />
+										</div>
+									</div>
+
+									<h2 class="accordion-header">Background</h2>
+									<div class="accordion-content">
+										<div class="tab">
+											<span id="tab_gradient">gradient</span>
+											<span id="tab_solid" class="disable_tab">solid</span>
+										</div>
+										<div class="tabview tab_gradient">
+											<div>
+												<span class="lbl">android:type</span>
+												<select id="gradient_type" name="gradient_type" class="shape_target txtbx">
+													<option value="linear">linear</option>
+													<option value="radial">radial</option>
+												</select>
+												&nbsp; Center
+												<input id="centerchk" class="" type="checkbox" />
+											</div>
+											<div class="centerx">
+												<span class="lbl">android:centerX</span>
+												<input id="gradient_centerx" name="gradient_centerx" class="shape_target txtbx" type="textbox" />
+											</div>
+											<div class="typeradial">
+												<span class="lbl">android:centerY</span>
+												<input id="gradient_centery" name="gradient_centery" class="shape_target txtbx" type="textbox" />
+											</div>
+											<div>
+												<span class="lbl">android:startColor</span>
+												<input id="gradient_startcolor" name="gradient_startcolor" class="shape_target txtbx color" type="textbox" value="FF2E2E" />
+											</div>
+											<div class="centerx centercol">
+												<span class="lbl">android:centerColor</span>
+												<input id="gradient_centercolor" name="gradient_centercolor" class="shape_target txtbx color" type="textbox" value="BEFF3B" />
+											</div>
+											<div>
+												<span class="lbl">android:endColor</span>
+												<input id="gradient_endcolor" name="gradient_endcolor" class="shape_target txtbx color" type="textbox" value="FFFF00" />
+											</div>
+											<div class="typelineer">
+												<span class="lbl">android:angle</span>
+												<input id="gradient_angle" name="gradient_angle" class="shape_target txtbx" type="textbox" />
+											</div>
+											<div class="typeradial">
+												<span class="lbl">android:gradientRadius</span>
+												<input id="gradient_gradientradius" name="gradient_gradientradius" class="shape_target txtbx" type="textbox" />
+											</div>
+
+										</div>
+										<div class="tabview tab_solid" style="display:none">
+											<div>
+												<span class="lbl">android:color</span>
+												<input id="solid_color" name="solid_color" class="shape_target txtbx color" type="textbox" />
+											</div>
+										</div>
+									</div>
+
+									<h2 class="accordion-header">padding</h2>
+									<div class="accordion-content">
+										<div style="margin-top:4px;padding-top:2px;">
+											<span id="paddinglbl" class="lbl"><b>Padding On</b></span>
+											<input id="paddingchk" class="" type="checkbox" />
+										</div>
+										<div class="padding">
+											<span class="lbl">android:left</span>
+											<input id="padding_left" name="padding_left" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div class="padding">
+											<span class="lbl">android:top</span>
+											<input id="padding_top" name="padding_top" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div class="padding">
+											<span class="lbl">android:right</span>
+											<input id="padding_right" name="padding_right" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div class="padding">
+											<span class="lbl">android:bottom</span>
+											<input id="padding_bottom" name="padding_bottom" class="shape_target txtbx" type="textbox" />
+										</div>
+									</div>
+
+									<h2 class="accordion-header">stroke</h2>
+									<div class="accordion-content">
+										<div>
+											<span class="lbl">android:width</span>
+											<input id="stroke_width" name="stroke_width" class="shape_target txtbx" type="textbox" />
+										</div>
+										<div>
+											<span class="lbl">android:color</span>
+											<input id="stroke_color" name="stroke_color" class="shape_target txtbx color" type="textbox" />
+										</div>
+									</div>
+
+								</div>
+
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="2">
+								<div id="helpimg">
+								</div>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>

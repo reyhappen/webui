@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html>
+<head> 		
+		<link type="image/x-icon" rel="shortcut icon" href="http://angrytools.com/include/img/favicon.ico">
+		<link href="http://angrytools.com/include/css/style.css?2" rel="stylesheet" type="text/css">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>		
+		<title>CSS Generator</title>
+			<script language="javascript" src="jquery-1.7.2.min.js.pagespeed.jm.TiC1blcYSb.js" type="text/javascript"></script>
+			<script language="javascript" src="inputslider-0.2.min.js?1" type="text/javascript"></script>
+			<script language="javascript" src="inputcircleslider-0.2.min.js" type="text/javascript"></script>
+			<script src="spectrum.js" type="text/javascript"></script>
+			<script src="cssgen-0.4.min.js?3" type="text/javascript"></script>
+			<link href="cssgen.css?3" rel="stylesheet" type="text/css">
+			<link rel="stylesheet" href="spectrum.css" type="text/css" media="screen">
+</head>
+<body>
+<div id="header"><div id="headerwrap"><a id="logo" href="http://angrytools.com/">Angrytools<span>.com</span></a></div>
+</div><div style="margin:7px auto;width:980px;font-size:16px;font-weight:bold;">
+	<h1 style="font-size:18px"><span style="float:left"><span style="color:#E31700">CSS</span>  Generator</span></h1>&nbsp;
+</div>
+ <div id="wrapper" style="width:1020px;background-color:white;border:0px;border-bottom:1px solid gray;">       
+	<div class="">   
+
+		<table width="100%" cellspacing="0" cellpadding="0" border="0"> 
+			 
+			<tr valign="top">			
+				 <td width="170px">					
+					<div id="menu">
+						<div style='position:relative'>
+							<div style='left: -55px;position: absolute;top:-18px;color:#006400;'>Start <br/>&nbsp;&nbsp;&nbsp;<span style='font-size:17px'>&#8618;</span></div>
+						</div>
+						<ul class="menucont">
+							<li class="item" id="menu-border"><span>Border</span><a target="_blank" href="http://angrytools.com/css-generator/border">&nbsp;</a></li>
+							<li class="item" id="menu-radius"><span>Border Radius</span><a target="_blank" href="http://angrytools.com/css-generator/border-radius">&nbsp;</a></li>
+							<li class="item" id="menu-shadow"><span>Box Shadow</span><a target="_blank" href="http://angrytools.com/css-generator/box-shadow">&nbsp;</a></li>
+							<li class="item" id="menu-bg"><span>Background</span><a target="_blank" href="http://angrytools.com/css-generator/background">&nbsp;</a></li>
+							<li class="item" id="menu-textshadow"><span>Text-Shadow</span><a target="_blank" href="http://angrytools.com/css-generator/text-shadow">&nbsp;</a></li>
+							<li class="item" id="menu-gradient"><span>Gradient</span><a target="_blank" href="http://angrytools.com/css-generator/gradient">&nbsp;</a></li>
+							<!--<li class="" id="menu-animation"><span>Animation</span><a>&nbsp;</a></li>-->
+							<li class="item" id="menu-transform"><span>Transform</span><a target="_blank" href="http://angrytools.com/css-generator/transform">&nbsp;</a></li>
+							<li class="item" id="menu-transition"><span>Transition</span><a target="_blank" href="http://angrytools.com/css-generator/transition">&nbsp;</a></li>
+						</ul>		
+					</div>
+				</td>
+				
+				<td>					
+					<script>$(function(){$('.preview-bgselector span').click(function(){className=$(this).attr('class');$(".preview-bg").removeClass('black-bg white-bg transparent-bg').addClass(className);});});</script>
+					<div id="preview" class="preview">						
+						<div class='preview-bg black-bg'>
+							<div id="preview-box" class="preview-box"></div>
+						</div>
+						<div class='preview-bgselector' style='display:inline-block' title="change background">
+							<span class='black-bg'>&nbsp;</span>
+							<span class='white-bg'>&nbsp;</span>
+							<span class='transparent-bg'>&nbsp;</span> 
+						</div>
+						<span id="boxoption"><span id="save" title="save current state into URL">save</span>&nbsp;|&nbsp;<span id="reset" title="reset the preview box">reset</span></span>
+					</div> 	
+				</td>
+				
+				<td colspan="0" rowspan="2" width="31%">
+					
+					<div id="formpanel" class="formpanel">
+ 
+					<!-- border -->
+						<div id="panel-border" class='panel'>
+							<h2>Border</h2>
+							<div>
+							<label>Border Width</label>
+							<input type="textbox" id="boallwid" data-id="0" class="inputslider" size="3" maxlength="3" value="10"/> px
+							</div>
+
+							<div class="margin-tb">
+							<label>Border Style</label>
+							<select id='boallst' data-id="1" class="selectoption">
+								<option value='solid'>solid</option>  
+								<option value='dotted'>dotted</option>
+								<option value='dashed'>dashed</option>
+								<option value='double'>double</option>
+								<option value='hidden'>hidden</option>
+								<option value='ridge'>ridge</option> 
+								<option value='inset'>inset</option>
+								<option value='outset'>outset</option>
+							</select>
+							</div>
+
+							<div>
+							<label>Border Color</label>
+							<input type="text" id="boallcol" data-id="2" class="colorpic" size="3"/>
+							</div>
+
+							<div style="border-bottom: 1px solid #9E9E9E;">&nbsp;</div>
+							
+							<br/>
+							<div>
+							<label>Individual</label>
+							<input type="checkbox" id="boindividual"/>
+							</div>
+
+							<br/>
+							<div id="bordermore" style='display:none'>
+								<div> <label>Border Top</label>  
+								<div class='bordercont'>
+								<input type="text" id="botopwid" data-id="4" class="inputslider" size="3" maxlength="3" value="10"/> px
+								<select id='botopst' data-id="5" class="selectoption">
+									<option value='solid'>solid</option>  
+									<option value='dotted'>dotted</option>
+									<option value='dashed'>dashed</option>
+									<option value='double'>double</option>
+									<option value='hidden'>hidden</option>
+									<option value='ridge'>ridge</option> 
+									<option value='inset'>inset</option>
+									<option value='outset'>outset</option>
+								</select>
+								<input type="text" id="botopcol" data-id="6" class="colorpic" size="3"/> 
+								</div>
+								</div>
+
+								<div class="margin-tb"> <label>Border Right</label>
+								<div class='bordercont'>
+								<input type="text" id="borwid" data-id="7" class="inputslider" size="3" maxlength="3" value="10"/> px 
+								<select id='borst' data-id="8" class="selectoption">
+									<option value='solid'>solid</option>  
+									<option value='dotted'>dotted</option>
+									<option value='dashed'>dashed</option>
+									<option value='double'>double</option>
+									<option value='hidden'>hidden</option>
+									<option value='ridge'>ridge</option> 
+									<option value='inset'>inset</option>
+									<option value='outset'>outset</option>
+								</select>
+								<input type="text" id="borcol" data-id="9" class="colorpic" size="3"/>
+								</div>
+								</div>
+
+								<div class="margin-b">
+								<label>Border Bottom</label>
+								<div class='bordercont'>
+								<input type="text" id="bobwid" data-id="10" class="inputslider" size="3" maxlength="3" value="10"/> px 
+								<select id='bobst' data-id="11" class="selectoption">
+									<option value='solid'>solid</option>  
+									<option value='dotted'>dotted</option>
+									<option value='dashed'>dashed</option>
+									<option value='double'>double</option>
+									<option value='hidden'>hidden</option>
+									<option value='ridge'>ridge</option> 
+									<option value='inset'>inset</option>
+									<option value='outset'>outset</option>
+								</select>
+								<input type="text" id="bobcol" data-id="12" class="colorpic" size="3"/>
+								</div>
+								</div>
+
+								<div>
+								<label>Border Left</label>
+								<div class='bordercont'>
+								<input type="text" id="bolwid" data-id="13" class="inputslider" size="3" maxlength="3" value="10"/> px 
+								<select id='bolst' data-id="14" class="selectoption">
+									<option value='solid'>solid</option>  
+									<option value='dotted'>dotted</option>
+									<option value='dashed'>dashed</option>
+									<option value='double'>double</option>
+									<option value='hidden'>hidden</option>
+									<option value='ridge'>ridge</option> 
+									<option value='inset'>inset</option>
+									<option value='outset'>outset</option>
+								</select>
+								<input type="text" id="bolcol" data-id="15" class="colorpic" size="3"/>
+								</div> 
+								</div>
+
+							</div>
+						</div> 
+
+						<!-- radius -->
+						<div id="panel-radius" class='panel'>
+							<h2>Border Radius</h2>
+
+							<div class="margin-2b">
+							<label>All Radius</label>
+							<input type="textbox" id="radiusall" size="3" maxlength="3" value="10"/> px
+							</div>
+
+							<div class="margin-b">
+							<label>Top Left</label>
+							<input type="textbox" class="radiusslider" size="3" maxlength="3" value="10"/> px
+							</div>
+
+							<div class="margin-b">
+							<label>Top Right</label>
+							<input type="textbox" class="radiusslider" size="3" maxlength="3" value="10"/> px
+							</div>
+
+							<div class="margin-b">
+							<label>Bottom Right</label>
+							<input type="textbox" class="radiusslider" size="3" maxlength="3" value="10"/> px
+							</div>
+
+							<div>
+							<label>Bottom Left</label>
+							<input type="textbox" class="radiusslider" size="3" maxlength="3" value="10"/> px
+							</div>
+							
+						</div>
+						
+						<!-- shadow -->
+						<div id="panel-shadow" class='panel'>
+							<h2>Box Shadow</h2>
+							<!-- 	inset -32px -14px 25px 0px #f00<br/>
+								type +-(x) +-(y) blur wide color  
+								-->
+
+							<div>
+							<label>Shadow Type</label>
+								<select id='shadow-type'>
+									<option value=''>Outset</option>
+									<option value='inset'>Inset</option>									
+								</select>
+							</div>
+							<div class="margin-tb">
+								<label>XY position</label>
+								<input type="textbox" id="shadow-x-pos" size="3" value='0'/> <input type="textbox" id="shadow-y-pos" size="3" value='0'/>
+							</div>
+							<div class="margin-b">
+								<label>Shadow Fade</label>
+								<input type="textbox" id="shadow-fade" size="3" value='10'/>
+							</div>
+							<div class="margin-b">
+								<label>Shadow Spread</label>
+								<input type="textbox" id="shadow-width" size="3" value='10'/>
+							</div>
+							<div>
+								<label>Shadow Color</label>
+								<input type="textbox" id="shadow-color" size="3"/>
+							</div> 
+
+							<div style="border-bottom: 1px solid #9E9E9E;">&nbsp;</div>
+
+							<div id="moreshadow"></div><br/>
+							
+							<div>
+								<span id="addmore">Add more [+]</span> 
+							</div> 
+
+						</div>
+
+						<!-- bg -->
+						<div id="panel-bg" class='panel'>
+							<h2>Background</h2>
+							<div>
+								<div>
+								<label>Background Color</label>
+								<input type="text" id="bg-color" size="3"/>
+								</div>
+
+								<br/>
+								<div>
+								<label>Background Image</label>
+								<input type="checkbox" id="bg-image"/>
+								</div>
+
+								<div id="isimgon">
+
+								<div>
+								<label>Background Repeat</label> 
+								<select id='bg-repeat'>
+									<option value='no-repeat'>no-repeat</option>  
+									<option value='repeat-x'>repeat-x</option>
+									<option value='repeat-y'>repeat-y</option>
+									<option value='repeat'>repeat</option>
+								</select>
+								</div>
+
+								<div>
+									<label>Background Position</label><br/><br/>
+									<input type="radio" name="bg-postype" checked="checked" value="1"/> keyword &nbsp;<br/>
+									<input type="radio" name="bg-postype" value="2"/> % (percent) &nbsp;<br/>
+									<input type="radio" name="bg-postype" value="3"/> px (pixel)
+								</div>
+								
+								<br/>
+								<div class='margin-b bg-poskey'><label>horizontal - x</label>
+									<select id='bg-poshkey'>
+										<option value="left" selected>left</option>
+										<option value="center">center</option>
+										<option value="right">right</option>
+									</select>
+								</div>				
+								<div class='bg-poskey'><label>vertical - y</label>
+									<select id='bg-posvkey'>
+										<option value="top" selected>top</option>
+										<option value="center">center</option>
+										<option value="bottom">bottom</option>
+									</select>
+								</div>
+								<div class='margin-b bg-posper'>
+									<label>horizontal - x</label>
+									<input id='bg-poshper' type="textbox" size="3" value="0"/>%
+								</div>									
+								<div class='bg-posper'>
+									<label>vertical - y</label>
+									<input id='bg-posvper' type="textbox" size="3" value="0"/>%
+								</div>
+								<div class='margin-b bg-pospx'>
+									<label>horizontal - x</label>
+									<input id='bg-poshpx' type="textbox" size="3" value="0"/>px
+								</div>									
+								<div class='bg-pospx'>
+									<label>vertical - y</label>
+									<input id='bg-posvpx' type="textbox" size="3" value="0"/>px
+								</div>
+
+								</div>
+								 
+							</div>
+						</div>
+
+						
+
+						<!-- textshadow -->
+						<div id="panel-textshadow" class='panel'>
+							<h2>Text Shadow</h2>
+							<div>
+								<div>
+								<label>Text</label>
+								<input type="textbox" id="txt-txts" value="Hello World" size="11" style='width:78px'/>
+								</div>
+							</div>
+							<div class="margin-tb">
+								<div>
+								<label>Text Color</label>
+								<input type="textbox" id="txts-col" size="3"/>
+								</div>
+							</div>
+							<div class="margin-b">
+								<div>
+								<label>Shadow Color</label>
+								<input type="textbox" id="txt-col" size="3"/>
+								</div>
+							</div>
+							<div class="margin-b">
+								<div>
+								<label>XY Position</label>
+								<input type="textbox" id="txt-x" size="3" value="-3"/> <input type="textbox" id="txt-y" size="3" value="4"/>
+								</div>
+							</div>
+							<div>
+								<div>
+								<label>Shadow blur</label>
+								<input type="textbox" id="txt-blur" size="3" value="8"/>
+								</div>
+							</div>
+
+							<div style="border-bottom: 1px solid #9E9E9E;">&nbsp;</div>
+
+							<div id="moretxtshadow"></div><br/>
+							
+							<div>
+								<span id="addtxtshadow">Add more [+]</span> 
+							</div> 
+
+
+							<!-- "-textshadow": [['Hello World'],['rgb(255, 45, 149)','0','0','40']],	-->
+						</div>
+
+						<!-- gradient -->
+						<div id="panel-gradient" class='panel'>
+
+							<h2>Gradient</h2>							
+							
+							<div>
+							<label>Orientation</label><select id='grad-type'>
+									<option value='linear'>linear</option>
+									<option value='radial'>radial</option>
+									<option value='elliptical'>elliptical</option>
+									<option value='repeating-linear'>repeat linear</option>
+									<option value='repeating-radial'>repeat radial</option>
+									<option value='repeating-elliptical'>repeat elliptical</option>
+								</select>
+							</div>							
+							<div class='margin-tb grad-nonlinear'>
+								<label>Size</label><select id='grad-type-size'>	 
+									<option value='farthest-side'>farthest-side</option>
+									<option value='farthest-corner'>farthest-corner</option>									
+								</select>								 
+							</div>
+							<div class='margin-b grad-nonlinear'>
+								<label>Position</label><select id='grad-type-pos'>
+									<option value='top left'>top left</option>
+									<option value='top center'>top center</option>
+									<option value='top right'>top right</option>
+									<option value='left center'>left center</option>
+									<option value='center center'>center center</option>
+									<option value='right center'>right center</option>
+									<option value='bottom left'>bottom left</option>
+									<option value='bottom center'>bottom center</option>
+									<option value='bottom right'>bottom right</option>
+									<option value='px'>px px</option>
+									<option value='percent'>% %</option>
+								</select>
+							</div>
+							<div id='grad-px-pos'><label></label><input type="textbox" id="grad-px-posx" size="3" value='0'/> px
+								<input type="textbox" id="grad-px-posy" size="3" value='0'/> px	 
+							</div>
+							<div id='grad-percent-pos'><label></label><input type="textbox" id="grad-percent-posx" size="3" value='0'/> %
+								<input type="textbox" id="grad-percent-posy" size="3" value='0'/> %	 
+							</div>
+							<div class='margin-tb grad-linear'>
+								<label>Degree</label><input type="textbox" id="grad-deg" size="3" value='0'/>								
+							</div> <br/><br/>
+							<div class='margin-b'>
+								<label>Start Color</label><input type="text" id="grad-col1" size="3"/> <input type='textbox' id='grad-pos1' value='' size='3'/>
+							</div>
+							<div id="moregradstopper"></div>
+							<div>
+								<label>End Color</label><input type="text" id="grad-col2" size="3"/> <input type='textbox' id='grad-pos2' value='' size='3'/>
+							</div>
+
+							<div>
+								<br/>
+								<span id="addcolstopper">Add Stopper [+]</span> 
+							</div> 
+															
+						</div>
+
+						<!-- animation -->
+						<div id="panel-animation" class='panel'>
+							<h2>Animation</h2>						
+							
+							<div>
+							<label>Orientation</label>
+								<select id='ani-type'>
+									<option value=''>Linear</option>									
+								</select>
+							</div>							 
+							<div>
+								<label>End Color</label><input type="text" id="grad-col2" size="3"/>
+							</div>							
+						</div>
+
+						<!-- transform -->
+						<div id="panel-transform" class='panel'>
+							<h2>Transform</h2> 
+
+							<div>
+								<div>
+								<label title="matrix is a combination of all below transformation">matrix (a,b,c,d,x,y)</label> 
+								</div>							
+								<br/>
+								<div class='mtx'> 
+								<label class='small' id="trans2d-mtxa">a</label>
+								<label class='small' id="trans2d-mtxc">b</label>
+								<label class='small' id="trans2d-mtxx">X</label>
+								<br/>
+								<label class='small' id="trans2d-mtxb">c</label>
+								<label class='small' id="trans2d-mtxd">d</label>
+								<label class='small' id="trans2d-mtxy">Y</label>
+								<br/>
+								<label class='small'>0</label>
+								<label class='small'>0</label>
+								<label class='small'>1</label>
+								<br/>
+								</div>
+							</div>  
+
+							<div style="border-bottom: 1px solid #9E9E9E;">&nbsp;</div>
+
+							<div>
+								<br/>
+								<label>Individual Transform</label>
+								<input type="checkbox" id="transindividual" title="set individual or combine transformation"/>
+								<br/><br/>
+							</div>
+
+							<div>
+								<div>
+								<label id='scale_lbl'>scale</label> 
+								<input type="textbox" id="trans2d-scalex" size="3" value="1"/> <input type="textbox" id="trans2d-scaley" size="3" value="1"/>
+								</div>
+							</div>
+
+							<div>
+								<div class="margin-tb">
+								<label id='rotate_lbl'>rotate</label> 
+								<input type="textbox" id="trans2d-rotate" size="3" value="0"/>
+								</div>
+							</div>
+
+							<div>
+								<div class="margin-b">
+								<label id='skew_lbl'>skew</label> 
+								<input type="textbox" id="trans2d-skewx" size="3" value="0"/> <input type="textbox" id="trans2d-skewy" size="3" value="0"/>
+								</div>
+							</div>
+
+							<div>
+								<div>
+								<label id='translate_lbl'>translate XY</label> 
+								<input type="textbox" id="trans2d-tranx" size="3" value="0"/> <input type="textbox" id="trans2d-trany" size="3" value="0"/>
+								</div>
+							</div>
+
+						</div>
+						<!-- panel transition -->
+						<div id="panel-transition" class='panel'>
+							<h2>Transition</h2>
+							<div>
+								<div id="tran"></div>
+								<div>
+									<br/>
+									<label id="tranmore"><b>Add Property [+]</b></label>
+									<div id="tranmoreoption" style="display:none">
+										<span id="tranmoredd"></span>
+										<span id="addtran">add </span> | <span id="canceltran"> cancel</span>
+									</div> 
+								</div>
+							</div>							
+						</div>
+					</div>  					 
+					<div style="margin:0 0 6px; padding-left: 10px;">
+						<!-- help -->
+						<p id="helppanel" class="helppanel"><b>CSS Generater</b> helps you to create css code for web developers. Browser engine use css property to format html elements.
+						<br/><br/>
+						There are three ways to define CSS property
+						<br/>
+						
+							1) Include external *.css file inside &lt;header&gt; element<br/>
+							2) define css inside &lt;style&gt; element<br/>
+							3) Use inline style attribute<br/>
+						 
+						<br/>
+						inline style is always in first priority given by browser engine
+						</p>
+					</div>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td colspan="2">					
+					<div id="codetab" class="codetab">
+						<span>Code</span> 
+					</div>
+					<div id="code">					
+						<div class="t">
+						
+						<span class="y"> external style sheet </span>
+							<div class="t">&lt;link <span class="r">href</span>=<span class="b">"style.css"</span> <span class="r">rel</span>=<span class="b">"stylesheet"</span> <span class="r">type</span>=<span class="b">"text/css"</span>&gt;</div>
+						<br/>
+						<span class="y"> internal style </span>
+							<div class="t">&lt;style&gt;
+								<div class="t"> div {
+									<div class="t"><span class="r">background-color</span>:<span class="b">red</span>;</div>
+									}
+								</div>
+							</div>
+							<div class="t">&lt;/style&gt;</div>
+						<br/>
+						<span class="y"> inline style </span><br/>
+							<div class="t">&lt;div <span class="r">style</span>=<span class="b">"background-color:red"</span> &gt; &lt;/div&gt;</div>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>		
+		
+	</div>                
+</div>
+</body>
+</html>

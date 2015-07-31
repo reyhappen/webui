@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				margin: 0px
+			}
+			body {
+				font-family: verdana, sans-serif;
+				font-size: 12px
+			}
+			a {
+				cursor: pointer;
+				color: #009191;
+				text-decoration: none
+			}
+			a:hover {
+				text-decoration: underline
+			}
+			a.abtn {
+				background-color: #4d90fe;
+				background-image: -moz-linear-gradient(center top, #4d90fe, #4787ed);
+				border: 1px solid #3079ed;
+				color: #fff;
+				display: inline-block;
+				font-weight: bold;
+				padding: 5px 20px;
+				text-decoration: none;
+				white-space: nowrap
+			}
+			a.abtn:hover {
+				background-color: #357ae8;
+				background-image: -moz-linear-gradient(center top, #4d90fe, #357ae8);
+				border: 1px solid #2f5bb7
+			}
+			h1 {
+				font-weight: bold;
+				font-family: sans-serif
+			}
+			span.r {
+				color: #e00
+			}
+			ul {
+				list-style: none outside none;
+				padding-left: 16px;
+				padding-top: 10px;
+				color: #848484
+			}
+			div#header {
+				background-color: #061f5e;
+				height: 37px;
+				margin-bottom: 40px;
+				box-shadow: 0 0 38px steelblue
+			}
+			div#headerwrap {
+				margin: 0 auto;
+				width: 990px
+			}
+			a#logo {
+				float: left;
+				color: #fff;
+				font-size: 23px;
+				margin-top: 2px;
+				font-weight: bold;
+				text-decoration: none
+			}
+			a#logo span {
+				font-size: 13px
+			}
+			a#logo:hover {
+				color: #ddd
+			}
+			#homelogo {
+				background-position: -3px 0;
+				background-repeat: no-repeat;
+				color: #fff;
+				cursor: pointer;
+				float: right;
+				font-weight: bold;
+				height: 25px;
+				padding-left: 37px;
+				padding-top: 12px;
+				width: 43px
+			}
+			#homelogo:hover {
+				background-color: #4682b4
+			}
+			#wrapper {
+				margin: 0 auto;
+				width: 980px;
+				border: 1px solid gray;
+				background-color: #f5f5f5
+			}
+			div.heading {
+				margin: 7px auto;
+				width: 980px
+			}
+			div.heading a {
+				font-size: 16px;
+				font-weight: bold;
+				float: right
+			}
+			div.heading h1 {
+				font-size: 16px;
+				float: left
+			}
+			div.heading h1 span {
+				color: #e31700
+			}
+			div.msg {}div.msg p {
+				margin: 0 0 12px;
+				padding: 0 0 11px
+			}
+			#footer {
+				margin: 4px auto;
+				margin-top: 32px;
+				width: 910px;
+				text-align: center;
+				color: #999;
+				font-size: 12px;
+				border-top: 1px solid #add8e6;
+				padding-top: 8px
+			}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Gradient to Image maker</title>
+		<script language="javascript" src="jquery-1.7.2.min.js.pagespeed.jm.TiC1blcYSb.js" type="text/javascript"></script>
+		<script src="gradient-image-2.1.min.js,Mjm.ZcXXK0ZBTl.js+inputslider-0.1.min.js,Mjm.qlr3YxlszW.js+inputcircleslider-0.1.min.js,Mjm.3hsJvOn93D.js+spectrum.js,Mjm.eHm_WvXlaD.js.pagespeed.jc.Pp5sAVuQVR.js"></script>
+		<link rel="stylesheet" href="A.style.image.css+spectrum.css,Mcc.ncKVzUKUiH.css.pagespeed.cf.MLiJ7nXY_8.css" type="text/css" media="screen" />
+	</head>
+
+	<body>
+		<div id="header">
+			<div id="headerwrap"><a id="logo" href="http://angrytools.com/">Angrytools<span>.com</span></a></div>
+		</div>
+		<div style="margin: 6px auto;width: 980px;font-size:18px;font-weight:bold;">
+			<h1 style="font-size:18px"><span style="float:left">Gradient to <span style="color:#E31700">Image</span> maker</span></h1>&nbsp;
+		</div>
+		<div id="wrapper" style="display:block; padding:15px; ">
+			<div>
+
+				<table cellspacing="5" cellpadding="5" border="0" width="100%">
+					<tr valign="top">
+						<td width="235px">Layers
+							<div id="g_layer_cont">
+								<!--<div class="g_layer"><div class="g_layer_bgt"><div class="g_layer_bg"></div></div></div>-->
+							</div>
+							<div id="g_layer_btn">
+								<input type="button" id="g_layer_new" value="add new" title="add new layer" />
+								<input type="button" id="g_layer_up" value="up" title="move layer up" />
+								<input type="button" id="g_layer_down" value="down" title="move layer down" />
+								<input type="button" id="g_layer_del" value="delete" title="remove layer" />
+							</div>Multi-layer Presets
+							<div id="g_layer_preset"></div>
+						</td>
+						<td width="410px">Gradient Preview
+							<div id="p_col" class="p_col" style="width:150px;height:150px;"></div>
+
+							<div class="g_box">
+								<span class="lbl">Orientation : </span>
+								<select class="orientation" id="img_orientation">
+									<option value="l">linear</option>
+									<option value="r">radial</option>
+								</select>
+								<span class="lbl" style="margin-left: 30px;">Angle : </span>
+								<input id="img_angle" type="textbox" maxlength="3" size="4" value="" />deg
+							</div>
+
+							<div style="" id="g_wrapper">
+								<div id="gradient" class="g_cont">
+									<div id="cs_t" class="cs_t"></div>
+									<div id="s_bg" class="s_bg"></div>
+									<div id="cs_b" class="cs_b"></div>
+								</div>
+							</div>
+
+							<br/>
+							<div class="g_box">
+								<span class="lbl">Alpha:</span>
+								<input type="text" maxlength="3" size="6" class="t_alpha" id="t_alpha" style="width:53px" value="">
+								<span class="lbl" style="margin-left: 45px;">Location:</span>
+								<input type="text" maxlength="3" size="3" id="t_loc" class="t_loc" style="width:34px" value="">
+								<span class="lbl" style="margin-left: 0px; margin-right: 33px;">%</span>
+								<input type="button" value="delete" class="alpha_delete">
+								<br/>
+								<span class="lbl" style="margin-left: 10px;">Color:</span>
+								<input type="text" maxlength="7" size="6" class="b_col" id="b_col" value="">
+								<span class="lbl" style="margin-left: 45px;">Location:</span>
+								<input type="text" maxlength="3" size="3" id="b_loc" class="b_loc" style="width:34px" value="">
+								<span class="lbl" style="margin-left: 0px; margin-right: 33px;">%</span>
+								<input type="button" value="delete" class="color_delete">
+							</div>
+
+							<div style='margin-top:5px'><a id="uniquelink" target="_blank">unique link</a></div>
+
+							<!--<div id="g_preset">						
+							<div class="g_l_preset" >
+								<div style='background: linear-gradient(to right, #ff0000 20%, #ffff00 30%) repeat scroll 0 0 transparent;width:100px;height:100px;'> 	
+								</div>								
+							</div>						
+						</div>-->
+						</td>
+						<td> Multi-layer Gradient Preview
+							<div class="p_col" style="width:250px;height:250px">
+								<div id="css_prev" style="height:100%;position:relative"></div>
+							</div>
+
+							<div class="g_box" style='height:103px;'>
+								<span class="lbl" style="width: 47px;">Width : </span>
+								<input id="img_width" type="textbox" maxlength="4" size="4" style="width:40px" value="200" />px
+								<span class="lbl" style="width: 51px;">Height : </span>
+								<input id="img_height" type="textbox" maxlength="4" size="4" style="width:40px" value="200" />px
+								<br/>
+								<br/>
+								<input type="button" class="abtn" id="generateimg_btn" value="generate image" />
+								<br/>
+								<br/>
+								<img id="loading" src="loading.gif.pagespeed.ce.72kELagBYY.gif" width="250" style="display:none" pagespeed_url_hash="3514761579" />
+							</div>
+
+							<div id="angrad"></div>
+							<div id="calcangle"></div>
+
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="3">
+
+							<div id="results"></div>
+							<br/>
+							<a style="display:none" title="generate image" id="download_btn" class="abtn">download</a>
+							<br/>
+							<br/>
+							<b>Base 64 code</b>
+							<textarea id="base64code" style="margin-bottom:10px;background-color:white;width:955px;height:150px;font-family:monospace;resize: none;border: 1px solid #aaa;" value="">&nbsp;&nbsp;&nbsp;&nbsp;Click Generate image button to get image code</textarea>
+							<br/>
+							<b>CSS code</b>
+							<div id="csscode">Multi layer gradient css code will display here after click on Generate image button</div>
+
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+		
+	</body>
+
+</html>

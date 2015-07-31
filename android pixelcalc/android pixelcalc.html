@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head> 		
+		<link type="image/x-icon" rel="shortcut icon" href="http://angrytools.com/include/img/favicon.ico">
+		<style>*{margin:0px}body{font-family:verdana,sans-serif;font-size:12px}a{cursor:pointer;color:#009191;text-decoration:none}a:hover{text-decoration:underline}a.abtn{background-color:#4d90fe;background-image:-moz-linear-gradient(center top,#4d90fe,#4787ed);border:1px solid #3079ed;color:#fff;display:inline-block;font-weight:bold;padding:5px 20px;text-decoration:none;white-space:nowrap}a.abtn:hover{background-color:#357ae8;background-image:-moz-linear-gradient(center top,#4d90fe,#357ae8);border:1px solid #2f5bb7}h1{font-weight:bold;font-family:sans-serif}span.r{color:#e00}ul{list-style:none outside none;padding-left:16px;padding-top:10px;color:#848484}div#header{background-color:#061f5e;height:37px;margin-bottom:40px;box-shadow:0 0 38px steelblue}div#headerwrap{margin:0 auto;width:990px}a#logo{float:left;color:#fff;font-size:23px;margin-top:2px;font-weight:bold;text-decoration:none}a#logo span{font-size:13px}a#logo:hover{color:#ddd}#homelogo{background-position:-3px 0;background-repeat:no-repeat;color:#fff;cursor:pointer;float:right;font-weight:bold;height:25px;padding-left:37px;padding-top:12px;width:43px}#homelogo:hover{background-color:#4682b4}#wrapper{margin:0 auto;width:980px;border:1px solid gray;background-color:#f5f5f5}div.heading{margin:7px auto;width:980px}div.heading a{font-size:16px;font-weight:bold;float:right}div.heading h1{font-size:16px;float:left}div.heading h1 span{color:#e31700}div.msg{}div.msg p{margin:0 0 12px;padding:0 0 11px}#footer{margin:4px auto;margin-top:32px;width:910px;text-align:center;color:#999;font-size:12px;border-top:1px solid #add8e6;padding-top:8px}</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>		
+		<title>Android Pixel Calculator</title>
+			<script language="javascript" src="jquery-1.7.2.min.js.pagespeed.jm.TiC1blcYSb.js" type="text/javascript"></script>
+			<script language="javascript" src="android.pixelcalc-0.4.min.js.pagespeed.jm.Kft5gd_uJv.js" type="text/javascript"></script>
+			<link rel="stylesheet" href="A.android.pixelcalc.css,q3.pagespeed.cf.VDBnIUui2z.css" type="text/css" media="screen">
+</head>
+<body>
+<div id="header"><div id="headerwrap"><a id="logo" href="http://angrytools.com/">Angrytools<span>.com</span></a></div>
+</div><div style="margin:7px auto;width:980px;font-size:16px;font-weight:bold;">
+	<h1 style="font-size:18px"><span style="float:left">Android <span style="color:#E31700">Pixel</span> Calculator</span></h1>&nbsp;
+	<a style="float:right" title="" href="http://angrytools.com/android/#"></a>
+</div>
+ <div id="wrapper">       
+	<div>
+		<div>
+			<table cellspacing="0" cellpadding="5" border="0" style=" margin: 0 auto; width: 900px;">
+			 <tr style='height:30px'>
+				<td colspan="3">
+				<div class='select-calc'>
+					<span id='hexselect' class="selected">Simple</span><span id='multiselect'>Advanced</span>
+				</div>
+				</td>
+			 </tr>
+			</table>
+			
+			<table class="hex" cellspacing="4" cellpadding="5" border="0">			
+			 <tr valign="top">
+				<td width="23%" id='g11' class='grid'>
+					<h2>dp</h2>
+					<h3>Density-independent Pixels</h3>
+					<div class='gval g-dp'></div>
+				</td>
+				<td width="23%" id='g12' class='grid'>
+					<h2>sp</h2>
+					<h3>Scale-independent Pixels</h3>
+					<div class='gval g-sp'></div>
+				</td>				
+				<td rowspan="3" id='g13'>
+					<h2 id="unittitle">&nbsp;</h2>
+					<hr/>
+					<p class="desc" id="unitdesc">Check relation between the dp, px, sp, in, mm and pt measurement units and convert to other unit.
+					</p>
+
+					<div class='unitbox'>
+						
+						<input type="textbox" id='unittxt' value="1"/>&nbsp;<span id="unitname">in</span>
+						<div style='margin-right:26px;'><input id='morebtn' class='morelessbtn' type="button" value="+"><input id='lessbtn' class='morelessbtn' type="button" value="-"></div>
+						
+						<div style="margin-top:10px; width: 100%; display: inline-block;">
+						<span style="float:left;font-size:20px">@ </span>
+						<select id="dpidd">
+							<option value="120" selected>ldpi : ~120</option>
+							<option value="160">mdpi : ~160</option>
+							<option value="213">tvdpi : ~213</option>
+							<option value="240">hdpi : ~240</option>
+							<option value="320">xhdpi : ~320</option>
+							<option value="480">xxhdpi : ~480</option>
+							<option value="640">xxxhdpi : ~640</option>
+							<option value="custom">custom</option>
+						</select>
+						<input type="textbox" id='customdpi' value="72"/>
+						</div>
+
+					</div>
+
+					<p class="desc" id="unitdesc2">Android doesn't do direct pixel mapping, it uses Density Independent Pixel (dpi) values to scales the actual screen size<br/><br/> to calculate pixel density - getResources().getDisplayMetrics().density; </p>
+				
+				</td>
+			 </tr>
+			 <tr valign="top">
+				<td id='g21' class='grid'>
+					<h2>px</h2>
+					<h3>Pixels  </h3>
+					<div class='gval g-px'></div>
+				</td>
+				<td id='g22' class='grid'>
+					<h2>mm</h2>
+					<h3>Millimeters </h3>
+					<div class='gval g-mm'></div>
+				</td>				
+			 </tr>
+			 <tr valign="top">
+				<td id='g31' class='grid'>
+					<h2>pt</h2>
+					<h3>Points </h3>
+					<div class='gval g-pt'></div>
+				</td>
+				<td id='g32' class='grid grid-active'>
+					<h2>in</h2>
+					<h3>Inches </h3>
+					<div class='gval g-in'></div>
+				</td> 
+			 </tr>
+			</table>
+			
+			<table class="multi" cellspacing="2" cellpadding="5" border="0" style="display:none;margin: 0 auto;width:900px;height:406px;">
+			  <tr valign="top" style="height: 36px;">
+			   <td width="20%" id="reset-multigrid"><div>Reset</div></td>
+			   <td width="13%" class="gridhead">in</td>
+			   <td width="13%" class="gridhead">dp</td> 
+			   <td width="13%" class="gridhead">px</td>			   
+			   <td width="13%" class="gridhead">pt</td>
+			   <td width="13%" class="gridhead">mm</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+				<td class='grid-1'>ldpi:~120</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="ldpi-in" id="ldpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="ldpi-dp" id="ldpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="ldpi-px" id="ldpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="ldpi-pt" id="ldpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="ldpi-mm" id="ldpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>mdpi:~160</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="mdpi-in" id="mdpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="mdpi-dp" id="mdpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="mdpi-px" id="mdpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="mdpi-pt" id="mdpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="mdpi-mm" id="mdpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>tvdpi:~213</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="tvdpi-in" id="tvdpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="tvdpi-dp" id="tvdpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="tvdpi-px" id="tvdpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="tvdpi-pt" id="tvdpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="tvdpi-mm" id="tvdpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>hdpi:~240</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="hdpi-in" id="hdpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="hdpi-dp" id="hdpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="hdpi-px" id="hdpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="hdpi-pt" id="hdpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="hdpi-mm" id="hdpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>xdpi:~320</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xdpi-in" id="xdpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xdpi-dp" id="xdpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xdpi-px" id="xdpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xdpi-pt" id="xdpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xdpi-mm" id="xdpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>xxdpi:~480</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxdpi-in" id="xxdpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxdpi-dp" id="xxdpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxdpi-px" id="xxdpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxdpi-pt" id="xxdpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxdpi-mm" id="xxdpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>xxxdpi:~640</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxxhdpi-in" id="xxxhdpi-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxxhdpi-dp" id="xxxhdpi-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxxhdpi-px" id="xxxhdpi-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxxhdpi-pt" id="xxxhdpi-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="xxxhdpi-mm" id="xxxhdpi-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			  <tr valign="top" height="56px">
+   				<td class='grid-1'>custom:~<input class='grid-custval' type="textbox" value="72" maxlength="10" id="cust-dpi"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn" id="advmoredpi"/>
+						<input type="button" value="-" class="morelessbtn" id="advlessdpi"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="cust-in" id="cust-in"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="cust-dp" id="cust-dp"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="cust-px" id="cust-px"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>				
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="cust-pt" id="cust-pt"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+				<td class='grid-2'>
+					<input class='grid-val' type="textbox" value="1" maxlength="10" data-id="cust-mm" id="cust-mm"/>
+					<div>
+						<input type="button" value="+" class="morelessbtn morebtn"/>
+						<input type="button" value="-" class="morelessbtn lessbtn"/>
+					</div>
+				</td>
+			  </tr>
+
+			</table>
+		</div>		
+	</div>                
+</div>
+</body>
+</html>

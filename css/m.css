@@ -1,0 +1,62 @@
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+body {font-family:"Helvetica Neue", Helvetica, STHeiTi, sans-serif;word-wrap:break-word;word-break:break-all;color:#333;line-height:1;-webkit-font-smoothing:antialiased;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+button,input,select,textarea{font-family:inherit;font-size:inherit;font-weight:inherit;outline:0;}
+input[type=button], input[type=submit], input[type=reset], button{-webkit-appearance:none;appearance:none;}
+table{border-collapse:collapse;border-spacing:0;}
+iframe,fieldset,img{border:0;}
+ol,ul{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+[invisible]{visibility:hidden!important;}
+[hidden]{display:none!important;}
+
+.fl,.fr{display:inline;}
+.fl{float:left;}
+.fr{float:right;}
+.clear:after{visibility:hidden;display:block;content:"";clear:both;height:0;}
+.ell{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
+
+/*居中*/
+.hcenter, .hvmiddle{margin-left:50%;}/*用于占位性居中，可能其父元素需要overflow:hidden*/
+.hcenter, .habscenter, .absmiddle{-webkit-transform: translateX(-50%);transform:translateX(-50%);}
+.habscenter, .absmiddle{position:absolute;left:50%;}
+.vcenter, .hvmiddle{margin-top:50%;}
+.vcenter, .vabscenter, .absmiddle{-webkit-transform: translateY(-50%);transform:translateY(-50%);}
+.vabscenter, .absmiddle{position:absolute;top:50%;}
+.absmiddle, .hvmiddle{-webkit-transform: translate(-50%,-50%);transform:translate(-50%,-50%);}
+
+.mask {
+	height: 100%; width: 100%;
+	background-color: rgba(255,255,255,.35);
+	position: absolute;
+	z-index: 9;
+}
+.loading { /* more info: http://www.zhangxinxu.com/wordpress/?p=3357 */
+    width: 3px; height:3px;
+    border-radius: 100%;
+    box-shadow: 0 -10px 0 1px currentColor,           /* top, 1px expand */
+                10px 0px currentColor,                /* right */
+                0 10px currentColor,                  /* bottom */
+                -10px 0 currentColor,                 /* left */
+
+                -7px -7px 0 .5px currentColor,        /* left-top, 0.5px expand */
+                7px -7px 0 1.5px currentColor,        /* right-top, 1.5px expand */
+                7px 7px currentColor,                 /* right-bottom */
+                -7px 7px currentColor;                /* left-bottom */
+	-webkit-animation: spin 1s steps(8) infinite;
+	animation: spin 1s steps(8) infinite;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+}
+/* chrysanthemum loading effect */
+@-webkit-keyframes spin {
+     0% { -webkit-transform: rotate(0deg); }
+   100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+     0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+

@@ -1,0 +1,229 @@
+.scontainer {
+	background: none repeat scroll 0 0 threedface;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	border-image: none;
+	border-style: solid;
+	border-width: 1px;
+	height: 22px;
+	font-size: 1px
+}
+.sbar {
+	border-bottom: 2px solid gray;
+	margin: 0px 12px;
+	height: 10px
+}
+.shandle {
+	width: 10px;
+	height: 11px;
+	background-color: #d3d3d3;
+	border: 1px solid #2f4f4f;
+	color: gray;
+	position: relative;
+	cursor: pointer;
+	top: 5px
+}
+.accordion-content .lbl {
+	width: 180px;
+	display: inline-block
+}
+.accordion-content .txtbx {
+	width: 70px;
+	border: 1px solid #a1a1a1
+}
+.preview {
+	background-color: #5e9923;
+	border: 1px solid #000;
+	color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 30px;
+	overflow: hidden;
+	width: 270px;
+	height: 38px;
+	cursor: pointer
+}
+.circlecontainer {
+	background: none repeat scroll 0 0 #fff;
+	border-image: none;
+	border-style: solid;
+	border-width: 2px;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	cursor: default
+}
+#dotted {
+	border-width: 2px;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%
+}
+#dial {
+	height: 2px;
+	margin: 49px 0 0 5px;
+	display: block;
+	width: 90px
+}
+#dial_0 {
+	font-size: 9px;
+	left: 88px;
+	position: inherit;
+	top: 41px
+}
+#dial_90 {
+	font-size: 9px;
+	left: 43px;
+	position: inherit;
+	top: 1px
+}
+#dial_180 {
+	font-size: 9px;
+	left: 1px;
+	position: inherit;
+	top: 41px
+}
+#dial_270 {
+	font-size: 9px;
+	left: 40px;
+	position: inherit;
+	top: 87px
+}
+#dial_l {
+	background-color: red;
+	width: 50%;
+	height: 2px
+}
+#r_pt {
+	height: 1px;
+	margin-left: 50px;
+	margin-top: 50px;
+	width: 1px;
+	position: absolute
+}
+#r_center {
+	height: 1px;
+	margin: 100px 0 0 100px;
+	position: absolute;
+	width: 1px
+}
+#wrapper {
+	border: 0px;
+	background: none
+}
+#previewcont {
+	text-align: center;
+	border: 0px solid #ddd;
+	height: 260px;
+	width: 540px;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: #000;
+	width: 518px;
+	border-radius: 5px 5px 5px 5px
+}
+div.codenametab {
+	margin-top: 20px
+}
+div.codenametab span {
+	background-color: #fff;
+	border-left: 1px solid #888;
+	border-right: 1px solid #888;
+	border-top: 1px solid #888;
+	cursor: pointer;
+	padding: 4px 15px 1px
+}
+div.codenametab span.hide {
+	background-color: silver;
+	border-bottom: 1px solid #ddd
+}
+.code {
+	background-color: #fff;
+	border: 1px solid #888;
+	display: block;
+	font: 14px monospace;
+	height: 350px;
+	overflow: auto;
+	padding: 6px 0 6px 12px;
+	margin-right: 13px
+}
+.code-shape {
+	margin-left: 16px
+}
+.code-shape div {
+	margin-left: 16px
+}
+.codetab span.b {
+	color: #00f
+}
+.codetab span.r {
+	color: #bd0000
+}
+.codetab span.cm,
+.codetab span.g {
+	color: #46a105
+}
+div.tab {
+	height: 40px
+}
+.tab span {
+	background-color: #ebebeb;
+	cursor: pointer;
+	cursor: black;
+	border-color: gray;
+	border-image: none;
+	border-style: solid;
+	border-width: 0 1px 1px;
+	height: 14px;
+	margin: 0 3px 3px;
+	padding: 10px 7px 7px
+}
+.tab span.disable_tab {
+	border: none;
+	color: gray;
+	background-color: #fff;
+	padding: 9px 7px 7px
+}
+div.tooldesc {
+	border: 1px solid #888;
+	color: #555;
+	line-height: 18px;
+	margin: 0 28px 16px 0;
+	padding: 9px 18px;
+	text-align: justify
+}
+div.tooldesc b {
+	color: #000
+}
+#accordion-container {
+	font-size: 13px;
+	width: 426px;
+	box-shadow: 0 0 6px 2px rgba(0, 0, 0, .3)
+}
+.accordion-header {
+	font-size: 13px;
+	line-height: 1.3em background: #4DA0CC;
+	text-transform: capitalize;
+	padding: 5px 9px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	color: #fff
+}
+.active-header {
+	background: url(xup.jpg.pagespeed.ic.1WkgxPyO66.jpg) no-repeat scroll right 50% #4da0cc
+}
+.active-header:hover {
+	background: url(xup.jpg.pagespeed.ic.1WkgxPyO66.jpg) no-repeat scroll right 50% #4da0cc
+}
+.inactive-header {
+	background: url(xdown.jpg.pagespeed.ic.3D9OgY3eN-.jpg) no-repeat scroll right 50% #4da0cc
+}
+.inactive-header:hover {
+	background: url(xdown.jpg.pagespeed.ic.3D9OgY3eN-.jpg) no-repeat scroll right 50% #4da0cc
+}
+.accordion-content {
+	padding: 9px 0px 9px 17px;
+	background: #e3f1f7;
+	border: 1px solid #ccc;
+	border-top: 0
+}
