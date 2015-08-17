@@ -25,7 +25,7 @@ dt{padding:5px;background:#f8f8f8;}
 dt a{margin:0 20px;}
 dd{padding:10px;}
 dd textarea{display:block;height:100px;width:100%;}
-.tbbigpadd{padding:20px 10px;}
+.tbbigpadd{padding:20px 10px;word-break:break-all;}
 </style>
 </head>
 <body>
@@ -84,15 +84,12 @@ function $(id){
 	<dd class="tbbigpadd"></dd>
 </dl>
 <script src="js/md5.js"></script>
+<script src="js/md4.js"></script>
+<script src="js/sha1.js"></script>
+<script src="js/base64.js"></script>
 <script>
 (function(){
-	var codetransformer = $('encryption'), tarea = codetransformer.getElementsByTagName('textarea')[0], alinks = codetransformer.getElementsByTagName('a'), fns = [md5, function(str) {
-		return str;
-	}, function(str) {
-		return str;
-	}, function(str) {
-		return str;
-	}], result = codetransformer.getElementsByTagName('dd')[1];
+	var codetransformer = $('encryption'), tarea = codetransformer.getElementsByTagName('textarea')[0], alinks = codetransformer.getElementsByTagName('a'), fns = [md5, hex_md4, hex_sha1, (new Base64()).encode], result = codetransformer.getElementsByTagName('dd')[1];
 	
 	for(i = 0, il = alinks.length; i<il; i++){
 		(function(k){
