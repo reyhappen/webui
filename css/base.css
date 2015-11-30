@@ -30,7 +30,7 @@ textarea{resize:none;}
 button{*overflow:visible;*font-size:90%;}
 
 /* 去掉各Table  cell 的边距并让其边框重合 */
-table{border-collapse:collapse;border-spacing:0;}
+table{border-collapse:collapse;border-spacing:0;empty-cells:show;}
 
 /* 去除默认边框 */
 iframe,fieldset,img{border:0;}
