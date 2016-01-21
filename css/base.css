@@ -176,7 +176,7 @@ body,.resetfs{font-size:12px;}/*重设字体*/
 .orange{color:#f60;}
 
 /* 单行文字溢出省略号 */
-.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
+.ell{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;word-break:keep-all;}
 
 /* 最小页面宽度 */
 .mwidth960{_unicode-bidi:expression(function(e){var s=e.style,d=document.documentElement;s.unicodeBidi='normal';s.width = d.clientWidth<960?"960px":"";window.attachEvent('onresize',function(){s.width = d.clientWidth<960?"960px":""});
